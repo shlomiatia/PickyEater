@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://vdc0qiq7rqkv"]
+
+[ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="1_u5rtl"]
+[ext_resource type="Texture2D" uid="uid://jtwude6jbf6r" path="res://Textures/Backgrounnd.jpg" id="1_v25t4"]
+[ext_resource type="PackedScene" uid="uid://c6usj2w2o7ksj" path="res://Entities/Object/Object.tscn" id="3_2vw61"]
+[ext_resource type="Texture2D" uid="uid://cs0cfyoj4oi5m" path="res://Textures/Bottle.png" id="4_0u7fg"]
+[ext_resource type="PackedScene" uid="uid://pe1hw82xabbc" path="res://Entities/Item/Item.tscn" id="4_resh7"]
+[ext_resource type="Texture2D" uid="uid://b4mvvenxbmdoj" path="res://Textures/Door.png" id="6_6rxri"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Backgrounnd" type="Sprite2D" parent="."]
+position = Vector2(1404, 542)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("1_v25t4")
+
+[node name="Floor" type="StaticBody2D" parent="." groups=["floor"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor"]
+polygon = PackedVector2Array(97, 1074, 94, 986, 315, 862, 1244, 860, 1304, 841, 1342, 812, 1339, 787, 2809, 810, 2804, 1080, 2804, 1080)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Bottle" parent="." instance=ExtResource("3_2vw61")]
+position = Vector2(1766, 579)
+
+[node name="Sprite2D" parent="Bottle" index="0"]
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("4_0u7fg")
+
+[node name="CollisionShape2D" parent="Bottle/StaticBody2D" index="0"]
+position = Vector2(0.5, -0.5)
+
+[node name="Door" parent="." instance=ExtResource("4_resh7")]
+position = Vector2(237, 636)
+
+[node name="Sprite2D" parent="Door" index="0"]
+position = Vector2(-25, 27)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("6_6rxri")
+
+[node name="CollisionShape2D" parent="Door/StaticBody2D" index="0"]
+position = Vector2(-21.5, 31.5)
+
+[node name="Kid" parent="." instance=ExtResource("1_u5rtl")]
+position = Vector2(1462, 854)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer"]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 90.0
+offset_bottom = 90.0
+scale = Vector2(2, 2)
+
+[editable path="Bottle"]
+[editable path="Door"]
