@@ -2,7 +2,7 @@ class_name KidItemState
 
 func enter(player: Kid):
     player.animation_player.seek(0)
-    player.animation_player.play("RESET")
+    player.animation_player.play("Idle")
 
 func _process(_player: Kid, _delta: float) -> void:
     pass
@@ -26,7 +26,7 @@ func handle_object(player: Kid, object: Node2D, _mouse_position: Vector2):
         if parts.size() == 1:
             player.show_dialog(dialog)
         elif parts[0] == "Mom":
-            print(player.mom)
+            player.dialog_label.ShowDialog(parts[1], Color.DARK_RED)
         elif parts[0] == "State":
             print(parts[1])
         

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://vdc0qiq7rqkv"]
+[gd_scene load_steps=17 format=3 uid="uid://vdc0qiq7rqkv"]
 
 [ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_jp0tb"]
 [ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="1_u5rtl"]
@@ -12,11 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://h2dl5fktjftg" path="res://Entities/Mom/Mom.tscn" id="7_0sulo"]
 [ext_resource type="PackedScene" uid="uid://dkmnen23uco44" path="res://Entities/Food/Food.tscn" id="8_vp4nc"]
 [ext_resource type="Texture2D" uid="uid://c4gpgt2b4t6hw" path="res://Textures/Dog.png" id="11_hq23r"]
+[ext_resource type="PackedScene" uid="uid://colc00mnslue8" path="res://Entities/Dialog/Dialog.tscn" id="13_3nyhw"]
 
 [sub_resource type="SystemFont" id="SystemFont_xnvh7"]
 
 [sub_resource type="Theme" id="Theme_jayqm"]
 default_font = SubResource("SystemFont_xnvh7")
+default_font_size = 48
+
+[sub_resource type="Theme" id="Theme_74o4m"]
 default_font_size = 48
 
 [node name="Game" type="Node2D"]
@@ -99,13 +103,24 @@ polygon = PackedVector2Array(-110, -34, -93, -88, -69, -92, -38, -77, -20, -56, 
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Object" type="Label" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -117.0
+offset_right = 51.0
+offset_bottom = -50.0
+grow_vertical = 0
+theme = SubResource("Theme_jayqm")
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource("13_3nyhw")]
 offset_left = 50.0
 offset_top = 50.0
-offset_right = 90.0
+offset_right = 51.0
 offset_bottom = 73.0
-theme = SubResource("Theme_jayqm")
+theme = SubResource("Theme_74o4m")
 
 [editable path="Trash"]
 [editable path="Fork"]
