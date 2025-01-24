@@ -97,6 +97,9 @@ texture = ExtResource("2_orl2t")
 [node name="CalfRight" type="Bone2D" parent="Skeleton2D/Hip/LegRight"]
 position = Vector2(-2, 81)
 rest = Transform2D(1, 0, 0, 1, -2, 81)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/LegRight/CalfRight"]
 position = Vector2(-19, -123)
@@ -113,6 +116,9 @@ texture = ExtResource("4_5bi7a")
 [node name="CalfLeft" type="Bone2D" parent="Skeleton2D/Hip/LegLeft"]
 position = Vector2(-7, 76)
 rest = Transform2D(1, 0, 0, 1, -7, 76)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/LegLeft/CalfLeft"]
 position = Vector2(43, -135)
@@ -120,6 +126,9 @@ texture = ExtResource("5_strow")
 
 [node name="Pants" type="Bone2D" parent="Skeleton2D/Hip"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Pants"]
 position = Vector2(5, -20)
@@ -148,6 +157,9 @@ texture = ExtResource("8_6vuj2")
 [node name="PalmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]
 position = Vector2(4, 37)
 rest = Transform2D(1, 0, 0, 1, 4, 37)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight/PalmRight"]
 position = Vector2(-57, -48)
@@ -176,6 +188,9 @@ texture = ExtResource("12_v4nce")
 [node name="PalmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
 position = Vector2(-4, 39)
 rest = Transform2D(1, 0, 0, 1, -4, 39)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft/PalmLeft"]
 position = Vector2(52, -45)
@@ -184,6 +199,9 @@ texture = ExtResource("13_ackn4")
 [node name="Head" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
 position = Vector2(13, -56)
 rest = Transform2D(1, 0, 0, 1, 13, -56)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/Head"]
 position = Vector2(-13, 123)

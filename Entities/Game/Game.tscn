@@ -55,7 +55,7 @@ texture = ExtResource("3_12h6r")
 polygon = PackedVector2Array(-61, -160, -58, 117, 115, 144, 116, -178)
 
 [node name="Mom" parent="." instance=ExtResource("7_0sulo")]
-position = Vector2(541, 582)
+position = Vector2(627, 440)
 
 [node name="Kid" parent="." instance=ExtResource("1_u5rtl")]
 position = Vector2(820, 857)
