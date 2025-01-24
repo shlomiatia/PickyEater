@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhp3d1ec1dppe"]
+[gd_scene load_steps=19 format=3 uid="uid://bhp3d1ec1dppe"]
 
 [ext_resource type="PackedScene" uid="uid://bp6juu24l6k1s" path="res://Entities/DialogPopup/DialogPopup.tscn" id="1_abdxt"]
 [ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_s7snu"]
@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://c5xpphg2803lj" path="res://Textures/Table .png" id="6_neev3"]
 [ext_resource type="Texture2D" uid="uid://be1rc6app0yxm" path="res://Textures/Chair.png" id="7_hl5gt"]
 [ext_resource type="Script" path="res://Scripts/StartBtn.gd" id="7_inpvj"]
-[ext_resource type="Shader" path="res://Shaders/Broccoli.gdshader" id="8_k4qfm"]
 [ext_resource type="Texture2D" uid="uid://bo8foveufodqf" path="res://Textures/Food/Broccoli.png" id="8_ufhwn"]
+[ext_resource type="Texture2D" uid="uid://c5mnp78v0q6m3" path="res://Textures/ui/Tv.png" id="8_uqolx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4px35"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -31,21 +31,13 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3iih"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e34ub"]
-shader = ExtResource("8_k4qfm")
-shader_parameter/max_line_width = 30.0
-shader_parameter/min_line_width = 20.0
-shader_parameter/freq = 1.0
-shader_parameter/block_size = 20.0
-shader_parameter/outline_colour = Vector4(0.996, 0.529, 0.176, 0.3)
-
 [node name="Main" type="Node2D"]
 
 [node name="DialogPopup" parent="." instance=ExtResource("1_abdxt")]
 z_index = -100
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.811765, 0.811765, 0.811765, 1)
+modulate = Color(0.741176, 0.741176, 0.741176, 1)
 position = Vector2(1424, 352)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_s7snu")
@@ -58,11 +50,13 @@ texture = ExtResource("2_qke7q")
 flip_h = true
 
 [node name="Kid" parent="." instance=ExtResource("3_o3hdd")]
+modulate = Color(0.811765, 0.811765, 0.811765, 1)
 position = Vector2(153, 850)
 scale = Vector2(2, 2)
 script = null
 
 [node name="Mom" parent="." instance=ExtResource("4_k4ahw")]
+modulate = Color(0.811765, 0.811765, 0.811765, 1)
 position = Vector2(1689, 602)
 scale = Vector2(-2.3, 2.3)
 script = null
@@ -70,22 +64,24 @@ script = null
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(566, 312)
+position = Vector2(566, 250)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_3ni8j")
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -89.0
-offset_top = -239.0
-offset_right = 89.0
-offset_bottom = -113.0
+anchor_bottom = 0.5
+offset_left = -610.0
+offset_top = -130.0
+offset_right = 269.0
+offset_bottom = 1157.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_pressed_color = Color(0.244903, 0.0302666, 0.0200901, 1)
 theme_override_colors/font_hover_color = Color(0.235573, 0.028064, 0.0186281, 1)
 theme_override_colors/font_pressed_color = Color(0.847059, 0.219608, 0.176471, 1)
@@ -99,26 +95,27 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_uhirl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kqbny")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8vw8p")
 theme_override_styles/normal = SubResource("StyleBoxFlat_u3iih")
-text = "Start"
+icon = ExtResource("8_uqolx")
 script = ExtResource("7_inpvj")
 
 [node name="Table" type="Sprite2D" parent="."]
-modulate = Color(0.811127, 0.811127, 0.811127, 1)
+modulate = Color(0.741385, 0.741385, 0.741384, 1)
 z_index = 1
-position = Vector2(1510, 1064)
+position = Vector2(1637.65, 1063.75)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_neev3")
 
 [node name="Chair" type="Sprite2D" parent="."]
-modulate = Color(0.811765, 0.811765, 0.811765, 1)
-position = Vector2(966, 1008)
+modulate = Color(0.741385, 0.741385, 0.741384, 1)
+position = Vector2(1093.65, 1007.75)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("7_hl5gt")
 
 [node name="Broccoli" type="Sprite2D" parent="."]
+modulate = Color(0.741385, 0.741385, 0.741384, 1)
+self_modulate = Color(0.811765, 0.811765, 0.811765, 1)
 z_index = 2
-material = SubResource("ShaderMaterial_e34ub")
-position = Vector2(1390, 818)
+position = Vector2(1517.65, 817.746)
 rotation = 0.164685
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("8_ufhwn")

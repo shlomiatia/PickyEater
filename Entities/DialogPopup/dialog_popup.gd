@@ -14,8 +14,13 @@ const kid: String = "kid"
 var dialog: Array[String] = []
 var current_speaker: String = kid
 
+var hover = load("res://Textures/ui/Hand Cursor 1.png")
+var start = load("res://Textures/ui/Remote Control 1.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(start, Input.CURSOR_POINTING_HAND)
+	
 	pass # Replace with function body.
 
 
