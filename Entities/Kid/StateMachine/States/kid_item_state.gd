@@ -22,7 +22,6 @@ func handle_object(player: Kid, object: Node2D, _mouse_position: Vector2):
             player.show_mom_dialog(parts[1])
         elif parts[0] == "Solution":
             player.scenery = object.get_parent()
-            player.move_to(player.item.global_position)
             Input.set_custom_mouse_cursor(null)
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_ITEM)      
                 

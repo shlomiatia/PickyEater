@@ -75,11 +75,11 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_nk60b")
 
 [node name="Food" parent="." instance=ExtResource("8_vp4nc")]
-position = Vector2(793, 809)
+position = Vector2(822, 804)
 scale = Vector2(0.25, 0.25)
 
 [node name="Fork" parent="." instance=ExtResource("4_resh7")]
-position = Vector2(789, 839)
+position = Vector2(802, 844)
 label = "Fork"
 
 [node name="Sprite2D" parent="Fork" index="0"]

@@ -14,6 +14,7 @@ var item: Node2D
 var scenery: Node2D
 var dialog_label: Label
 var mom: Mom
+var after_throw_state: KidStateMachine.KidStateEnum = KidStateMachine.KidStateEnum.STAND
 
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
@@ -103,5 +104,6 @@ func move_to(potential_target_position: Vector2):
     else:
         skeleton2d.scale.x = -absScaleX
         
-func stand():
-    KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.STAND)
+func finish_throw():
+    KidStateMachine.change_state(self, after_throw_state)
+    after_throw_state = KidStateMachine.KidStateEnum.STAND

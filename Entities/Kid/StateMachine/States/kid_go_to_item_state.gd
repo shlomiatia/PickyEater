@@ -1,22 +1,25 @@
 class_name KidGoToItemState
 
-func enter(_player: Kid):
-    pass
-    
+func enter(player: Kid):
+    player.move_to(player.item.global_position)
+    player.animation_player.seek(0)
+    player.animation_player.play("Walk", -1, 2.0)
+
 func cancel(_player: Kid) -> void:
     pass
 
 func _process(player: Kid, delta: float) -> void:
     if player.process_walk(delta):
-        if player.item.name == "Fork" && player.scenery.name == "Dog":
-            player.animation_player.play("throw")
-            player.show_mom_dialog("Oh dear look at what you’ve done now")
-            player.mom.move_to(Vector2(1700, 670))
-            player.get_node("/root/Game/Food").name = "Food1"
-            player.item.queue_free()
-            player.scenery = null
-        elif player.item.name == "Food1" && player.scenery.name == "Trash":
+        if player.item.name == "Food1" && player.scenery == null:
+            print("aaa")
             player.item.empty()
+            player.item.show()
+            KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.STAND)
+        elif player.item.name == "Fork" && player.scenery.name == "Dog":
+            player.item.queue_free()
+            KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
+        elif player.item.name == "Food1" && player.scenery.name == "Trash":
+            player.item.hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
         player.item = null
             
