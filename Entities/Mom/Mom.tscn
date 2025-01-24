@@ -446,7 +446,7 @@ height = 518.0
 script = ExtResource("1_msa81")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 
 [node name="Hip" type="Bone2D" parent="Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
@@ -505,7 +505,6 @@ texture = ExtResource("5_lde7f")
 texture = ExtResource("6_js0uo")
 
 [node name="Dress" type="Bone2D" parent="Skeleton2D/Hip"]
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Dress"]
@@ -525,7 +524,6 @@ texture = ExtResource("8_4iots")
 
 [node name="Chest" type="Bone2D" parent="Skeleton2D/Hip"]
 position = Vector2(-14, -118)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -14, -118)
 
 [node name="ArmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
@@ -568,7 +566,6 @@ texture = ExtResource("12_hugh6")
 [node name="HandRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight"]
 position = Vector2(36, 127)
 rotation = -1.39758
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 36, 127)
 
 [node name="PalmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]

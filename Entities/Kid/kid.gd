@@ -1,7 +1,7 @@
 class_name Kid extends Node2D
 
 const speed: float = 500.0
-const scale_base: float = 0.45
+const scale_base: float = 0.5
 
 var target_position: Vector2
 var skeleton2d: Skeleton2D
@@ -9,7 +9,7 @@ var floor_min_max: Vector2
 var legs_offset: float = 120.0
 var current_enum: KidStateMachine.KidStateEnum
 var item_label: Label
-var animation_player: AnimationPlayer
+var dialog_animation_player: AnimationPlayer
 var dialog_label: Label
 var item: Node2D
 var scenery: Node2D
@@ -17,7 +17,7 @@ var scenery: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
-    animation_player = get_node("AnimationPlayer")
+    dialog_animation_player = get_node("DialogAnimationPlayer")
     dialog_label = get_node("Label")
     item_label = get_node("/root/Game/CanvasLayer/Label")
     var floor_body = get_node("/root/Game/Floor")
@@ -32,7 +32,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
     KidStateMachine.get_current(self)._process(self, delta)
-    var scaleSizeY = scale_base + inverse_lerp(floor_min_max.x, floor_min_max.y, global_position.y + legs_offset) * (0.5 - scale_base)
+    var scaleSizeY = scale_base + inverse_lerp(floor_min_max.x, floor_min_max.y, global_position.y + legs_offset) * (0.6 - scale_base)
     var scaleSizeX = scaleSizeY
     if(skeleton2d.scale.x < 0):
         scaleSizeX = -scaleSizeY
@@ -52,6 +52,8 @@ func _unhandled_input(event: InputEvent):
                 var object = PointCast.get_node_at_point(mouse_position)
                 if object != null:
                     KidStateMachine.get_current(self).handle_object(self, object, mouse_position)
+            if event.button_index == MOUSE_BUTTON_RIGHT:
+                KidStateMachine.get_current(self).cancel(self)
                     
 func process_walk(delta: float) -> bool:
     if target_position != Vector2.ZERO:
@@ -88,8 +90,8 @@ func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
 
 func show_dialog(dialog: String):
     dialog_label.text = dialog
-    animation_player.seek(0)
-    animation_player.play("Show")
+    dialog_animation_player.seek(0)
+    dialog_animation_player.play("Show")
         
 func move_to(potential_target_position: Vector2):
     target_position = potential_target_position
