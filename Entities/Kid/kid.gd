@@ -68,7 +68,10 @@ func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
         show_dialog(dialog)
     if object.is_in_group("items"):
         item = object.get_parent()
-        Input.set_custom_mouse_cursor(item.get_node("Sprite2D").texture)
+        var image = item.get_node("Sprite2D").texture.get_image()
+        image.resize(64, 64)
+        var small_texture = ImageTexture.create_from_image(image)
+        Input.set_custom_mouse_cursor(small_texture)
         KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.ITEM)
         return
     var can_move = object.is_in_group("floor")

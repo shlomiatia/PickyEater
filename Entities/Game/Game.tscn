@@ -34,10 +34,11 @@ position = Vector2(1188, 907)
 label = "Fork"
 
 [node name="Sprite2D" parent="Fork" index="0"]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_a186j")
 
 [node name="CollisionPolygon2D" parent="Fork/StaticBody2D" index="0"]
-polygon = PackedVector2Array(-32, 35, 12, -40, 32, -27, -21, 39)
+polygon = PackedVector2Array(-29, 32, 9, -39, 32, -30, -21, 37)
 
 [node name="Window" parent="." instance=ExtResource("6_1kefv")]
 position = Vector2(1809, 399)
