@@ -14,11 +14,8 @@ func cancel(player: Kid) -> void:
 func handle_object(player: Kid, object: Node2D, _mouse_position: Vector2):
     var key = "%s.%s" % [player.item.name, object.get_parent().name]
     var dialog = DataProvider.get_data().get(key)
-    
-
     if dialog != null:
         var parts = dialog.split(">")
-        print(parts)
         if parts.size() == 1:
             player.show_dialog(dialog)
         elif parts[0] == "Mom":

@@ -51,6 +51,10 @@
         {
             "Id": "Food.Dog",
             "Text": "Bobby is a proud Chinese dog. He doesn’t eat vegetables"
-        }
+        },
+        {
+            "Id": "Food1.Trash",
+            "Text": "Solution>"
+        },
         ]
 }
