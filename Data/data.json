@@ -1,0 +1,12 @@
+{
+        "Strings": [
+        {
+            "Id": "Mom",
+            "Text": "It's my mom"
+        },
+        {
+            "Id": "Door",
+            "Text": "It's a door"
+        }
+        ]
+}

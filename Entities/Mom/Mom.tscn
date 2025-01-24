@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://h2dl5fktjftg"]
+[gd_scene load_steps=26 format=3 uid="uid://h2dl5fktjftg"]
 
 [ext_resource type="Texture2D" uid="uid://bqci5im7g78fu" path="res://Textures/Mom/calf_right.png" id="1_8jdi7"]
+[ext_resource type="Script" path="res://Entities/Mom/mom.gd" id="1_msa81"]
 [ext_resource type="Texture2D" uid="uid://ls8btu702251" path="res://Textures/Mom/foot_right.png" id="2_e3hg2"]
 [ext_resource type="Texture2D" uid="uid://c2b3nub51w13y" path="res://Textures/Mom/leg_right.png" id="3_d178t"]
 [ext_resource type="Texture2D" uid="uid://b4sfxbl5un3gd" path="res://Textures/Mom/calf_left.png" id="4_lwbuf"]
@@ -20,107 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://c4ths73a1upmi" path="res://Textures/Mom/eye_left.png" id="17_3q5do"]
 [ext_resource type="Texture2D" uid="uid://dbx5t1mrgcaxb" path="res://Textures/Mom/eye_right.png" id="18_phjf5"]
 [ext_resource type="Texture2D" uid="uid://8u0bvhr1xcow" path="res://Textures/Mom/mouth.png" id="19_5txw3"]
-
-[sub_resource type="Animation" id="Animation_cejgv"]
-resource_name = "Hi"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton2D/Hip/Chest/ArmLeft:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, -2),
-"update": 0,
-"values": [0.0, 0.0872665]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Skeleton2D/Hip/Chest/ArmLeft/HandLeft:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, -2),
-"update": 0,
-"values": [0.0, -2.32129]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Skeleton2D/Hip/Chest/ArmLeft/HandLeft/PalmLeft:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, -2),
-"update": 0,
-"values": [0.0, -0.610865]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Skeleton2D/Hip/Chest/ArmRight:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, -2),
-"update": 0,
-"values": [0.0, -0.0872665]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Skeleton2D/Hip/Chest/Head/EyeLeft:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, -2),
-"update": 0,
-"values": [Vector2(-14, -73), Vector2(-25, -73)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Skeleton2D/Hip/Chest/Head/EyeRight:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, -2),
-"update": 0,
-"values": [Vector2(50, -80), Vector2(44, -80)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Skeleton2D/Hip/Chest/Head:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0872665]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Skeleton2D/Hip/Chest/ArmLeft/HandLeft/PalmLeft:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, -2),
-"update": 0,
-"values": [Vector2(85, 5), Vector2(85, 9)]
-}
 
 [sub_resource type="Animation" id="Animation_fg16i"]
 length = 0.001
@@ -221,15 +121,62 @@ tracks/7/keys = {
 "values": [Vector2(85, 5)]
 }
 
+[sub_resource type="Animation" id="Animation_3p6og"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Hip/Chest/Head:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0174533]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/Hip/Chest/ArmLeft:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0174533]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Hip/Chest/ArmRight:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.0174533]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6jk5x"]
 _data = {
-"Hi": SubResource("Animation_cejgv"),
+"Idle": SubResource("Animation_3p6og"),
 "RESET": SubResource("Animation_fg16i")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p2vom"]
+radius = 54.0
+height = 518.0
+
 [node name="Mom" type="Node2D"]
+script = ExtResource("1_msa81")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="Hip" type="Bone2D" parent="Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
@@ -423,4 +370,10 @@ texture = ExtResource("19_5txw3")
 libraries = {
 "": SubResource("AnimationLibrary_6jk5x")
 }
-autoplay = "Hi"
+autoplay = "Idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-5, 57)
+shape = SubResource("CapsuleShape2D_p2vom")

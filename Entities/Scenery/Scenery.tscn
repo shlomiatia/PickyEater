@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6usj2w2o7ksj"]
+
+[ext_resource type="Script" path="res://Entities/Scenery/scenery.gd" id="1_fg7el"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw03a"]
+resource_local_to_scene = true
+
+[node name="Scenery" type="Node2D"]
+script = ExtResource("1_fg7el")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["scenery"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_rw03a")

@@ -4,18 +4,19 @@ const scale_base: float = 0.45
 
 var target_position: Vector2
 var sprite2d: Sprite2D
-var camera2d: Camera2D
 var floor_min_max: Vector2
 var legs_offset: float
-var item_icon: TextureRect
-var target_item: Node2D
-var target_object: Node2D
 var current_enum: KidStateMachine.PlayerStateEnum
+var item_label: Label
+var animation_player: AnimationPlayer
+var dialog_label: Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     sprite2d = get_node("Sprite2D")
-    camera2d = get_node("/root/Game/Camera2D")
+    animation_player = get_node("AnimationPlayer")
+    dialog_label = get_node("Label")
+    item_label = get_node("/root/Game/CanvasLayer/Label")
     var floor_body = get_node("/root/Game/Floor")
     var collision_polygon_2d = floor_body.get_child(0) as CollisionPolygon2D
     var min_y = INF
@@ -25,7 +26,6 @@ func _ready() -> void:
         max_y = max(max_y, point.y)
     floor_min_max = Vector2(min_y, max_y)
     legs_offset = sprite2d.texture.get_height() * sprite2d.scale.y / 2.0 - 50.0 
-    item_icon = get_node("/root/Game/CanvasLayer/ItemIcon")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,30 +37,41 @@ func _process(delta: float) -> void:
     sprite2d.scale = Vector2(scaleSizeX, scaleSizeY)
             
 func _unhandled_input(event: InputEvent):
+    if event is InputEventMouseMotion:
+        var object = PointCast.get_node_at_point(event.global_position)
+        if object != null && "label" in object.get_parent():
+            item_label.text = object.get_parent().label
+        else:
+            item_label.text = ""
     if event is InputEventMouseButton:
         if event.is_pressed():
             if event.button_index == MOUSE_BUTTON_LEFT:
                 var mouse_position = event.global_position
                 var y: float =  mouse_position.y - legs_offset
                 var potential_target_position = Vector2(mouse_position.x, y)
-                var item = PointCast.get_node_at_point(mouse_position, "objects")
-                if item != null:
-                    move_to_object_at(potential_target_position)
-                    target_object = null
-                    target_item = item
-                    return
-                var object = PointCast.get_node_at_point(mouse_position, "items")
-                if object != null: 
-                    move_to_object_at(potential_target_position)
-                    target_item = null
-                    target_object = object
-                    return
-                var can_move = PointCast.get_node_at_point(mouse_position, "floor") != null
+                var object = PointCast.get_node_at_point(mouse_position)
+                var dialog = DataProvider.get_data().get(object.get_parent().name)
+                if dialog != null:
+                    dialog_label.text = dialog
+                    animation_player.play("Show")
+                #var item = PointCast.get_node_at_point(mouse_position, "items")
+                #if item != null:
+                    #move_to_object_at(potential_target_position)
+                    #target_scenery = null
+                    #target_item = item
+                    #return
+                #var scenery = PointCast.get_node_at_point(mouse_position, "scenery")
+                #if scenery != null: 
+                    #move_to_object_at(potential_target_position)
+                    #target_item = null
+                    #target_scenery = scenery
+                    #return
+                var can_move = object.is_in_group("floor")
                 if can_move:
                     move_to(potential_target_position)
                 else: 
                     target_position = Vector2.ZERO
-                    
+             
 func move_to_object_at(potential_target_position: Vector2):                    
     if(potential_target_position.y < floor_min_max.x):
         potential_target_position.y = floor_min_max.x 

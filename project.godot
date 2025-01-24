@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PointCast="*res://Scripts/point_cast.gd"
 KidStateMachine="*res://Entities/Kid/StateMachine/kid_state_machine.gd"
+DataProvider="*res://Scripts/data_provider.gd"
 
 [display]
 

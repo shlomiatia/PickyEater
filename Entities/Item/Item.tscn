@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://pe1hw82xabbc"]
+[gd_scene load_steps=3 format=3 uid="uid://pe1hw82xabbc"]
+
+[ext_resource type="Script" path="res://Entities/Item/item.gd" id="1_f6qet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5enti"]
-size = Vector2(157, 573)
+resource_local_to_scene = true
 
 [node name="Item" type="Node2D"]
+script = ExtResource("1_f6qet")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
