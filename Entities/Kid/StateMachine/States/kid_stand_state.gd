@@ -1,5 +1,7 @@
 class_name KidStandState
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(player: Kid, delta: float) -> void:
+func enter(_player: Kid):
+    pass
+
+func _process(_player: Kid, _delta: float) -> void:
     pass

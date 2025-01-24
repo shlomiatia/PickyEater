@@ -1,6 +1,5 @@
 class_name Kid extends Node2D
 
-const speed: float = 500.0
 const scale_base: float = 0.45
 
 var target_position: Vector2
@@ -11,6 +10,7 @@ var legs_offset: float
 var item_icon: TextureRect
 var target_item: Node2D
 var target_object: Node2D
+var current_enum: KidStateMachine.PlayerStateEnum
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,16 +29,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    if target_position != Vector2.ZERO:
-        global_position = global_position.move_toward(target_position, delta * speed)
-        if global_position == target_position:
-            if target_item != null:
-                item_icon.texture = target_item.get_parent().get_node("Sprite2D").texture
-                target_item.get_parent().queue_free()
-                target_item = null
-            if target_object != null:
-                item_icon.texture = null
-                target_object = null
+    KidStateMachine.get_current(self)._process(self, delta)
     var scaleSizeY = scale_base + inverse_lerp(floor_min_max.x, floor_min_max.y, global_position.y + legs_offset) * (0.5 - scale_base)
     var scaleSizeX = scaleSizeY
     if(sprite2d.scale.x < 0):
@@ -54,17 +45,13 @@ func _unhandled_input(event: InputEvent):
                 var potential_target_position = Vector2(mouse_position.x, y)
                 var item = PointCast.get_node_at_point(mouse_position, "objects")
                 if item != null:
-                    if(potential_target_position.y < floor_min_max.x):
-                        potential_target_position.y = floor_min_max.x 
-                    move_to(potential_target_position)
+                    move_to_object_at(potential_target_position)
                     target_object = null
                     target_item = item
                     return
                 var object = PointCast.get_node_at_point(mouse_position, "items")
-                if object != null:
-                    if(potential_target_position.y < floor_min_max.x):
-                        potential_target_position.y = floor_min_max.x 
-                    move_to(potential_target_position)
+                if object != null: 
+                    move_to_object_at(potential_target_position)
                     target_item = null
                     target_object = object
                     return
@@ -74,11 +61,16 @@ func _unhandled_input(event: InputEvent):
                 else: 
                     target_position = Vector2.ZERO
                     
-                
+func move_to_object_at(potential_target_position: Vector2):                    
+    if(potential_target_position.y < floor_min_max.x):
+        potential_target_position.y = floor_min_max.x 
+        move_to(potential_target_position)
+        
 func move_to(potential_target_position: Vector2):
     target_position = potential_target_position
     var absScaleX = absf(sprite2d.scale.x)
     if target_position.x > global_position.x:
         sprite2d.scale.x = absScaleX
     else:
-        sprite2d.scale.x = -absScaleX              
+        sprite2d.scale.x = -absScaleX
+    KidStateMachine.change_state(self, KidStateMachine.PlayerStateEnum.WALK)          

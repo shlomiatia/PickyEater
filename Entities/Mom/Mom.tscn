@@ -317,12 +317,10 @@ texture = ExtResource("9_f47je")
 
 [node name="HandLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmLeft"]
 position = Vector2(-34, 125)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -34, 125)
 
 [node name="PalmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
 position = Vector2(85, 5)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 85, 5)
 auto_calculate_length_and_angle = false
 length = 16.0
