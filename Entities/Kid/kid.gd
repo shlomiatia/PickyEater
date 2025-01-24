@@ -2,23 +2,26 @@ class_name Kid extends Node2D
 
 const speed: float = 250.0
 const scale_base: float = 0.5
+const legs_offset: float = 120.0
 
 var target_position: Vector2
 var skeleton2d: Skeleton2D
 var floor_min_max: Vector2
-var legs_offset: float = 120.0
 var current_enum: KidStateMachine.KidStateEnum
 var object_label: Label
 var animation_player: AnimationPlayer
 var item: Node2D
 var scenery: Node2D
 var dialog_label: Label
+var mom: Mom
+var after_throw_state: KidStateMachine.KidStateEnum = KidStateMachine.KidStateEnum.STAND
 
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
     animation_player = get_node("AnimationPlayer")
     object_label = get_node("/root/Game/CanvasLayer/Object")
     dialog_label = get_node("/root/Game/CanvasLayer/Dialog")
+    mom = get_node("/root/Game/Mom")
     var floor_body = get_node("/root/Game/Floor")
     var collision_polygon_2d = floor_body.get_child(0) as CollisionPolygon2D
     var min_y = INF
@@ -89,6 +92,9 @@ func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
 
 func show_dialog(dialog: String):
     dialog_label.ShowDialog(dialog, Color.DARK_BLUE)
+    
+func show_mom_dialog(dialog: String):
+    dialog_label.ShowDialog(dialog, Color.DARK_RED)
         
 func move_to(potential_target_position: Vector2):
     target_position = potential_target_position
@@ -98,3 +104,6 @@ func move_to(potential_target_position: Vector2):
     else:
         skeleton2d.scale.x = -absScaleX
         
+func finish_throw():
+    KidStateMachine.change_state(self, after_throw_state)
+    after_throw_state = KidStateMachine.KidStateEnum.STAND
