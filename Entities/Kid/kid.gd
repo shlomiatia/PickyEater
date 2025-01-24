@@ -1,4 +1,4 @@
-extends Node2D
+class_name Kid extends Node2D
 
 const speed: float = 500.0
 const scale_base: float = 0.45

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://vdc0qiq7rqkv"]
+[gd_scene load_steps=8 format=3 uid="uid://vdc0qiq7rqkv"]
 
 [ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="1_u5rtl"]
 [ext_resource type="Texture2D" uid="uid://jtwude6jbf6r" path="res://Textures/Backgrounnd.jpg" id="1_v25t4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cs0cfyoj4oi5m" path="res://Textures/Bottle.png" id="4_0u7fg"]
 [ext_resource type="PackedScene" uid="uid://pe1hw82xabbc" path="res://Entities/Item/Item.tscn" id="4_resh7"]
 [ext_resource type="Texture2D" uid="uid://b4mvvenxbmdoj" path="res://Textures/Door.png" id="6_6rxri"]
+[ext_resource type="PackedScene" uid="uid://h2dl5fktjftg" path="res://Entities/Mom/Mom.tscn" id="7_0sulo"]
 
 [node name="Game" type="Node2D"]
 
@@ -54,6 +55,10 @@ offset_top = 50.0
 offset_right = 90.0
 offset_bottom = 90.0
 scale = Vector2(2, 2)
+
+[node name="Mom" parent="." instance=ExtResource("7_0sulo")]
+position = Vector2(727, 586)
+scale = Vector2(0.5, 0.5)
 
 [editable path="Bottle"]
 [editable path="Door"]
