@@ -6,7 +6,7 @@ const legs_offset: float = 150.0
 var label: String = "Mom"
 
 var current_enum: MomStateMachine.MomStateEnum
-var target_position: Vector2
+var target_node: Node2D
 var animation_player: AnimationPlayer
 var floor_min_max: Vector2
 var skeleton2d: Skeleton2D
@@ -34,6 +34,11 @@ func _process(delta: float) -> void:
         scaleSizeX = -scaleSizeY
     skeleton2d.scale = Vector2(scaleSizeX, scaleSizeY)
 
-func move_to(position_to_move_to: Vector2):
-    target_position = position_to_move_to
+func move_to(node: Node2D):
+    target_node = node
+    var absScaleX = absf(skeleton2d.scale.x)
+    if target_node.global_position.x > global_position.x:
+        skeleton2d.scale.x = absScaleX
+    else:
+        skeleton2d.scale.x = -absScaleX
     MomStateMachine.change_state(self, MomStateMachine.MomStateEnum.WALK)

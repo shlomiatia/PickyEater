@@ -14,4 +14,6 @@ func _process(_delta: float) -> void:
     
 func empty():
     sprite2d.texture = load("res://Textures/Food/Plate.png")
+    show()
+
     

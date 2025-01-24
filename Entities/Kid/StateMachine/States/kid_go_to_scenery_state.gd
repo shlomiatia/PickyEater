@@ -15,7 +15,7 @@ func _process(player: Kid, delta: float) -> void:
         if player.scenery.name == "Dog":
             player.animation_player.play("throw")
             player.show_mom_dialog("Oh dear look at what you’ve done now")
-            player.mom.move_to(Vector2(1700, 670))
+            player.mom.move_to(player.get_node("/root/Game/Sink"))
             player.get_node("/root/Game/Food").name = "Food1"
             player.scenery = null
         elif player.scenery.name == "Trash":

@@ -11,10 +11,10 @@ func cancel(_player: Kid) -> void:
 func _process(player: Kid, delta: float) -> void:
     if player.process_walk(delta):
         if player.item.name == "Food1" && player.scenery == null:
-            print("aaa")
             player.item.empty()
-            player.item.show()
-            KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.STAND)
+            player.animation_player.play("throw")
+            player.show_mom_dialog("How lovely, you must be craving for a second!")
+            player.mom.move_to(player.get_node("/root/Game/Food1"))
         elif player.item.name == "Fork" && player.scenery.name == "Dog":
             player.item.queue_free()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
