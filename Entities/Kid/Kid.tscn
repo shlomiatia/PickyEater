@@ -1,7 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dujrwkr24dw6q"]
+[gd_scene load_steps=19 format=3 uid="uid://dujrwkr24dw6q"]
 
 [ext_resource type="Script" path="res://Entities/Kid/kid.gd" id="1_ue2pt"]
-[ext_resource type="Texture2D" uid="uid://niihyiwr874a" path="res://Textures/Kid.png" id="2_imulf"]
+[ext_resource type="Texture2D" uid="uid://trjanj5kvfr6" path="res://Textures/Kid/Leg2.png" id="2_orl2t"]
+[ext_resource type="Texture2D" uid="uid://bym085q3vcvrr" path="res://Textures/Kid/Leg2-1.png" id="3_tj3i5"]
+[ext_resource type="Texture2D" uid="uid://cu2g4xkhjma8g" path="res://Textures/Kid/Leg1.png" id="4_5bi7a"]
+[ext_resource type="Texture2D" uid="uid://c7ho2ri5rcd8" path="res://Textures/Kid/Leg1-1.png" id="5_strow"]
+[ext_resource type="Texture2D" uid="uid://otrd5s80w8lr" path="res://Textures/Kid/Body low.png" id="6_hru5x"]
+[ext_resource type="Texture2D" uid="uid://b5lxqyaepnu5r" path="res://Textures/Kid/Arm2.png" id="7_174gd"]
+[ext_resource type="Texture2D" uid="uid://glqvsmfhsm0a" path="res://Textures/Kid/Arm2-1.png" id="8_6vuj2"]
+[ext_resource type="Texture2D" uid="uid://c1kwc4lrqvjal" path="res://Textures/Kid/Arm2-2.png" id="9_1lb8k"]
+[ext_resource type="Texture2D" uid="uid://dkj2mym5gao1d" path="res://Textures/Kid/Body.png" id="10_grjpk"]
+[ext_resource type="Texture2D" uid="uid://du00sn83ht5ff" path="res://Textures/Kid/Arm1.png" id="11_emdp6"]
+[ext_resource type="Texture2D" uid="uid://dvx8hs54awh18" path="res://Textures/Kid/Arm1-1.png" id="12_v4nce"]
+[ext_resource type="Texture2D" uid="uid://bj7rhcudpqpjy" path="res://Textures/Kid/Arm1-2.png" id="13_ackn4"]
+[ext_resource type="Texture2D" uid="uid://cufdyn7wf07x0" path="res://Textures/Kid/Head.png" id="14_wspbs"]
 
 [sub_resource type="Theme" id="Theme_yjygc"]
 default_font_size = 48
@@ -46,10 +58,6 @@ _data = {
 [node name="Kid" type="Node2D"]
 script = ExtResource("1_ue2pt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_imulf")
-
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 1
@@ -71,3 +79,112 @@ theme = SubResource("Theme_yjygc")
 libraries = {
 "": SubResource("AnimationLibrary_etqm6")
 }
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Hip" type="Bone2D" parent="Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="LegRight" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(18, 35)
+rest = Transform2D(1, 0, 0, 1, 18, 35)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/LegRight"]
+position = Vector2(-21, -49)
+texture = ExtResource("2_orl2t")
+
+[node name="CalfRight" type="Bone2D" parent="Skeleton2D/Hip/LegRight"]
+position = Vector2(-2, 81)
+rest = Transform2D(1, 0, 0, 1, -2, 81)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/LegRight/CalfRight"]
+position = Vector2(-19, -123)
+texture = ExtResource("3_tj3i5")
+
+[node name="LegLeft" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(-31, 54)
+rest = Transform2D(1, 0, 0, 1, -31, 54)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/LegLeft"]
+position = Vector2(37, -71)
+texture = ExtResource("4_5bi7a")
+
+[node name="CalfLeft" type="Bone2D" parent="Skeleton2D/Hip/LegLeft"]
+position = Vector2(-7, 76)
+rest = Transform2D(1, 0, 0, 1, -7, 76)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/LegLeft/CalfLeft"]
+position = Vector2(43, -135)
+texture = ExtResource("5_strow")
+
+[node name="Pants" type="Bone2D" parent="Skeleton2D/Hip"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Pants"]
+position = Vector2(5, -20)
+texture = ExtResource("6_hru5x")
+
+[node name="Chest" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(2, -79)
+rest = Transform2D(1, 0, 0, 1, 2, -79)
+
+[node name="ArmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
+position = Vector2(35, -5)
+rest = Transform2D(1, 0, 0, 1, 35, -5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmRight"]
+position = Vector2(-43, 64)
+texture = ExtResource("7_174gd")
+
+[node name="HandRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight"]
+position = Vector2(12, 74)
+rest = Transform2D(1, 0, 0, 1, 12, 74)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]
+position = Vector2(-54, -11)
+texture = ExtResource("8_6vuj2")
+
+[node name="PalmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]
+position = Vector2(4, 37)
+rest = Transform2D(1, 0, 0, 1, 4, 37)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight/PalmRight"]
+position = Vector2(-57, -48)
+texture = ExtResource("9_1lb8k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest"]
+position = Vector2(-6, 63)
+texture = ExtResource("10_grjpk")
+
+[node name="ArmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
+position = Vector2(-47, -4)
+rest = Transform2D(1, 0, 0, 1, -47, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft"]
+position = Vector2(41, 66)
+texture = ExtResource("11_emdp6")
+
+[node name="HandLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmLeft"]
+position = Vector2(-7, 78)
+rest = Transform2D(1, 0, 0, 1, -7, 78)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
+position = Vector2(48, -10)
+texture = ExtResource("12_v4nce")
+
+[node name="PalmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
+position = Vector2(-4, 39)
+rest = Transform2D(1, 0, 0, 1, -4, 39)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft/PalmLeft"]
+position = Vector2(52, -45)
+texture = ExtResource("13_ackn4")
+
+[node name="Head" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
+position = Vector2(13, -56)
+rest = Transform2D(1, 0, 0, 1, 13, -56)
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/Head"]
+position = Vector2(-13, 123)
+texture = ExtResource("14_wspbs")
