@@ -563,6 +563,7 @@ texture = ExtResource("10_grjpk")
 
 [node name="ArmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
 position = Vector2(-47, -4)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -47, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft"]
@@ -590,6 +591,7 @@ texture = ExtResource("13_ackn4")
 
 [node name="Head" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
 position = Vector2(13, -56)
+rotation = -3.14159
 rest = Transform2D(1, 0, 0, 1, 13, -56)
 auto_calculate_length_and_angle = false
 length = 16.0
