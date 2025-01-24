@@ -9,11 +9,11 @@
             "Text": "It's a window"
         },
         {
-            "Id": "Bottle.Mom",
+            "Id": "Fork.Mom",
             "Text": "She doesn't want that"
         },
         {
-            "Id": "Bottle.Window",
+            "Id": "Fork.Window",
             "Text": "<Solution>"
         }
         ]

@@ -1,6 +1,5 @@
 class_name KidItemState
 
-
 func enter(_player: Kid):
     pass
 

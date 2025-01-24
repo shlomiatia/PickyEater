@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8p3ybo1fshr3"
-path="res://.godot/imported/Mom.png-76de727325571957539f3f5c618899eb.ctex"
+uid="uid://c2l7u41n08v5r"
+path="res://.godot/imported/Mouth O.png-59be8b1f49faa48f29db2987b4254729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Mom.png"
-dest_files=["res://.godot/imported/Mom.png-76de727325571957539f3f5c618899eb.ctex"]
+source_file="res://Textures/Mom/Mouth O.png"
+dest_files=["res://.godot/imported/Mouth O.png-59be8b1f49faa48f29db2987b4254729.ctex"]
 
 [params]
 
