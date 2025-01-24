@@ -1,3 +1,122 @@
-[gd_scene format=3 uid="uid://bhp3d1ec1dppe"]
+[gd_scene load_steps=19 format=3 uid="uid://bhp3d1ec1dppe"]
+
+[ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_s7snu"]
+[ext_resource type="Texture2D" uid="uid://c4gpgt2b4t6hw" path="res://Textures/Dog.png" id="2_qke7q"]
+[ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="3_o3hdd"]
+[ext_resource type="PackedScene" uid="uid://h2dl5fktjftg" path="res://Entities/Mom/Mom.tscn" id="4_k4ahw"]
+[ext_resource type="Texture2D" uid="uid://cqb8q0km2ltjs" path="res://Textures/logo.png" id="5_3ni8j"]
+[ext_resource type="FontFile" uid="uid://b3vmfl3aamk1t" path="res://Fonts/AestheticVintage-Textured.ttf" id="5_xx8c0"]
+[ext_resource type="Texture2D" uid="uid://c5xpphg2803lj" path="res://Textures/Table .png" id="6_neev3"]
+[ext_resource type="Texture2D" uid="uid://be1rc6app0yxm" path="res://Textures/Chair.png" id="7_hl5gt"]
+[ext_resource type="Script" path="res://Scripts/StartBtn.gd" id="7_inpvj"]
+[ext_resource type="Shader" path="res://Shaders/Broccoli.gdshader" id="8_k4qfm"]
+[ext_resource type="Texture2D" uid="uid://bo8foveufodqf" path="res://Textures/Food/Broccoli.png" id="8_ufhwn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4px35"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg7yo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhirl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqbny"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vw8p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3iih"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e34ub"]
+shader = ExtResource("8_k4qfm")
+shader_parameter/max_line_width = 30.0
+shader_parameter/min_line_width = 20.0
+shader_parameter/freq = 1.0
+shader_parameter/block_size = 20.0
+shader_parameter/outline_colour = Vector4(0.996, 0.529, 0.176, 0.3)
 
 [node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.811765, 0.811765, 0.811765, 1)
+position = Vector2(1424, 352)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_s7snu")
+
+[node name="Dog" type="Sprite2D" parent="."]
+modulate = Color(0.811765, 0.811765, 0.811765, 1)
+position = Vector2(1135, 672)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_qke7q")
+flip_h = true
+
+[node name="Kid" parent="." instance=ExtResource("3_o3hdd")]
+position = Vector2(153, 850)
+scale = Vector2(2, 2)
+script = null
+
+[node name="Mom" parent="." instance=ExtResource("4_k4ahw")]
+position = Vector2(1689, 602)
+scale = Vector2(-2.3, 2.3)
+script = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(566, 312)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_3ni8j")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -239.0
+offset_right = 89.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0.244903, 0.0302666, 0.0200901, 1)
+theme_override_colors/font_hover_color = Color(0.235573, 0.028064, 0.0186281, 1)
+theme_override_colors/font_pressed_color = Color(0.847059, 0.219608, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_xx8c0")
+theme_override_font_sizes/font_size = 124
+theme_override_styles/focus = SubResource("StyleBoxFlat_4px35")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_cg7yo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_uhirl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kqbny")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8vw8p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u3iih")
+text = "Start"
+script = ExtResource("7_inpvj")
+
+[node name="Table" type="Sprite2D" parent="."]
+modulate = Color(0.811127, 0.811127, 0.811127, 1)
+z_index = 1
+position = Vector2(1510, 1064)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_neev3")
+
+[node name="Chair" type="Sprite2D" parent="."]
+modulate = Color(0.811765, 0.811765, 0.811765, 1)
+position = Vector2(966, 1008)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_hl5gt")
+
+[node name="Broccoli" type="Sprite2D" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_e34ub")
+position = Vector2(1390, 818)
+rotation = 0.164685
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_ufhwn")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
