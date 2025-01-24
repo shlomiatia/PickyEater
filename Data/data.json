@@ -25,20 +25,16 @@
             "Text": "I would never throw away Forky, he’s one of my two best friends!"
         },
         {
-            "Id": "Fork.Trash",
-            "Text": "I would never throw away Forky, he’s one of my two best friends!"
-        },
-        {
             "Id": "Fork.Dog",
             "Text": "Solution>"
         },
         {
             "Id": "Fork.Window",
-            "Text": "I shouldn’t do that, it may hit mom and she will get angry"
+            "Text": "I shouldn’t do that"
         },
         {
             "Id": "Food.Mom",
-            "Text": "Mom>Aww thank you honey, but i’ve already eaten."
+            "Text": "Mom>Aww thank you honey, but i’ve already eaten"
         },
         {
             "Id": "Food.Trash",
@@ -46,15 +42,31 @@
         },
         {
             "Id": "Food.Window",
-            "Text": "I can’t get to the window"
+            "Text": "She will see me"
         },
         {
             "Id": "Food.Dog",
             "Text": "Bobby is a proud Chinese dog. He doesn’t eat vegetables"
         },
         {
-            "Id": "Food1.Trash",
-            "Text": "Solution>"
+            "Id": "Food1.Mom",
+            "Text": "Mom>If you’ll be a good boy and finish all your food, I will gladly join you for desert"
+        },
+        {
+            "Id": "Food1.Window",
+            "Text": "I can’t get to the window with mom on the way"
+        },
+        {
+            "Id": "Food2.Dog",
+            "Text": ">Solution"
+        },
+        {
+            "Id": "Food2.Trash",
+            "Text": "It's full"
+        },
+        {
+            "Id": "Food2.Window",
+            "Text": "Bobby looks skinny, he should eat something"
         },
         ]
 }

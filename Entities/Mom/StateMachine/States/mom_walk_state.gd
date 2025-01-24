@@ -12,6 +12,14 @@ func _process(mom: Mom, delta: float) -> void:
             MomStateMachine.change_state(mom, MomStateMachine.MomStateEnum.WASH)
             mom.target_node = null
         elif mom.target_node.name == "Food1":
-            pass
+            #mom.get_node("/root/Game/Fork").show()
+            var food = mom.get_node("/root/Game/Food1")
+            food.sprite2d.texture = load("res://Textures/Food/Worms.png")
+            food.name = "Food2"
+            mom.target_node = mom.get_node("/root/Game/Exit")
+        elif mom.target_node.name == "Exit":
+            mom.target_node = null
+            mom.hide()
+            MomStateMachine.change_state(mom, MomStateMachine.MomStateEnum.STAND)
         
             

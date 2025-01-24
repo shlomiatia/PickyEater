@@ -125,6 +125,9 @@ theme = SubResource("Theme_74o4m")
 [node name="Sink" type="Node2D" parent="."]
 position = Vector2(1700, 670)
 
+[node name="Exit" type="Node2D" parent="."]
+position = Vector2(633, 505)
+
 [editable path="Window"]
 [editable path="Trash"]
 [editable path="Fork"]

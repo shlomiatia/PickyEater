@@ -16,7 +16,7 @@ func _process(player: Kid, delta: float) -> void:
             player.show_mom_dialog("How lovely, you must be craving for a second!")
             player.mom.move_to(player.get_node("/root/Game/Food1"))
         elif player.item.name == "Fork" && player.scenery.name == "Dog":
-            player.item.queue_free()
+            player.item.hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
         elif player.item.name == "Food1" && player.scenery.name == "Trash":
             player.item.hide()
