@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bmk2qy2munoe"]
+
+[node name="MomStateMachine" type="Node2D"]

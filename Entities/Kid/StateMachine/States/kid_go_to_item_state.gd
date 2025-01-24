@@ -8,11 +8,13 @@ func cancel(_player: Kid) -> void:
 
 func _process(player: Kid, delta: float) -> void:
     if player.process_walk(delta):
-        player.item.queue_free()
-        player.item = null
-        player.move_to(player.scenery.global_position)
-        player.scenery = null
-        KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)     
-
+        if player.item.name == "Fork" && player.scenery.name == "Dog":
+            player.animation_player.play("throw")
+            player.show_mom_dialog("Oh dear look at what you’ve done now")
+            player.mom.move_to(Vector2(1700, 670))
+            player.item.queue_free()
+            player.item = null
+            player.scenery = null
+            
 func handle_object(_player: Kid, _object: Node2D, _mouse_position: Vector2):
     pass

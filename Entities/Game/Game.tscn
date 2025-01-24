@@ -37,6 +37,16 @@ polygon = PackedVector2Array(4, 1082, -3, 999, 96, 947, 130, 949, 378, 791, 831,
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
+[node name="Window" parent="." instance=ExtResource("6_1kefv")]
+position = Vector2(1809, 399)
+label = "Window"
+
+[node name="Sprite2D" parent="Window" index="0"]
+texture = ExtResource("3_12h6r")
+
+[node name="CollisionPolygon2D" parent="Window/StaticBody2D" index="0"]
+polygon = PackedVector2Array(-61, -160, -58, 117, 115, 144, 116, -178)
+
 [node name="Mom" parent="." instance=ExtResource("7_0sulo")]
 position = Vector2(633, 505)
 
@@ -80,16 +90,6 @@ texture = ExtResource("3_a186j")
 [node name="CollisionPolygon2D" parent="Fork/StaticBody2D" index="0"]
 polygon = PackedVector2Array(-43, -5, 38, -13, 40, 6, -42, 4)
 
-[node name="Window" parent="." instance=ExtResource("6_1kefv")]
-position = Vector2(1809, 399)
-label = "Window"
-
-[node name="Sprite2D" parent="Window" index="0"]
-texture = ExtResource("3_12h6r")
-
-[node name="CollisionPolygon2D" parent="Window/StaticBody2D" index="0"]
-polygon = PackedVector2Array(-61, -160, -58, 117, 115, 144, 116, -178)
-
 [node name="Dog" parent="." instance=ExtResource("6_1kefv")]
 position = Vector2(1794, 986)
 label = "Bobby"
@@ -122,7 +122,10 @@ offset_right = 51.0
 offset_bottom = 73.0
 theme = SubResource("Theme_74o4m")
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1691, 670)
+
+[editable path="Window"]
 [editable path="Trash"]
 [editable path="Fork"]
-[editable path="Window"]
 [editable path="Dog"]
