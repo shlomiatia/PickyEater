@@ -9,12 +9,48 @@
             "Text": "It's a window"
         },
         {
+            "Id": "Dog",
+            "Text": "Good dog Bobby!"
+        },
+        {
+            "Id": "Trash",
+            "Text": "It's a trash can"
+        },
+        {
             "Id": "Fork.Mom",
-            "Text": "She doesn't want that"
+            "Text": "Mom>Look at you, holding a fork like a champ"
+        },
+        {
+            "Id": "Fork.Trash",
+            "Text": "I would never throw away Forky, he’s one of my two best friends!"
+        },
+        {
+            "Id": "Fork.Trash",
+            "Text": "I would never throw away Forky, he’s one of my two best friends!"
+        },
+        {
+            "Id": "Fork.Dog",
+            "Text": "State>2"
         },
         {
             "Id": "Fork.Window",
-            "Text": "<Solution>"
+            "Text": "I shouldn’t do that, it may hit mom and she will get angry"
+        },
+        {
+            "Id": "Food.Mom",
+            "Text": "Mom>Aww thank you honey, but i’ve already eaten."
+        },
+        {
+            "Id": "Food.Trash",
+            "Text": "Mom>Don’t play with your food honey, get back to the table!"
+        },
+        {
+            "Id": "Food.Window",
+            "Text": "I can’t get to the window"
+        },
+        {
+            "Id": "Food.Dog",
+            "Text": "Bobby is a proud Chinese dog. He doesn’t eat vegetables"
         }
         ]
 }
