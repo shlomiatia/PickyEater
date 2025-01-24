@@ -8,21 +8,17 @@ var skeleton2d: Skeleton2D
 var floor_min_max: Vector2
 var legs_offset: float = 120.0
 var current_enum: KidStateMachine.KidStateEnum
-var item_label: Label
-var dialog_animation_player: AnimationPlayer
+var object_label: Label
 var animation_player: AnimationPlayer
-var dialog_label: Label
 var item: Node2D
 var scenery: Node2D
-var mom: Mom
+var dialog_label: Label
 
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
     animation_player = get_node("AnimationPlayer")
-    dialog_animation_player = get_node("DialogAnimationPlayer")
-    dialog_label = get_node("Label")
-    item_label = get_node("/root/Game/CanvasLayer/Label")
-    mom = get_node("/root/Game/Mom")
+    object_label = get_node("/root/Game/CanvasLayer/Object")
+    dialog_label = get_node("/root/Game/CanvasLayer/Dialog")
     var floor_body = get_node("/root/Game/Floor")
     var collision_polygon_2d = floor_body.get_child(0) as CollisionPolygon2D
     var min_y = INF
@@ -45,9 +41,9 @@ func _unhandled_input(event: InputEvent):
     if event is InputEventMouseMotion:
         var object = PointCast.get_node_at_point(event.global_position)
         if object != null && "label" in object.get_parent():
-            item_label.text = object.get_parent().label
+            object_label.text = object.get_parent().label
         else:
-            item_label.text = ""
+            object_label.text = ""
     if event is InputEventMouseButton:
         if event.is_pressed():
             if event.button_index == MOUSE_BUTTON_LEFT:
@@ -92,9 +88,7 @@ func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
     
 
 func show_dialog(dialog: String):
-    dialog_label.text = dialog
-    dialog_animation_player.seek(0)
-    dialog_animation_player.play("Show")
+    dialog_label.ShowDialog(dialog, Color.DARK_BLUE)
         
 func move_to(potential_target_position: Vector2):
     target_position = potential_target_position

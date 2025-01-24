@@ -2,7 +2,7 @@ class_name KidStandState
 
 func enter(player: Kid):
     player.animation_player.seek(0)
-    player.animation_player.play("RESET")
+    player.animation_player.play("Idle")
 
 func _process(_player: Kid, _delta: float) -> void:
     pass

@@ -764,7 +764,6 @@ texture = ExtResource("9_f47je")
 
 [node name="HandLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmLeft"]
 position = Vector2(-34, 125)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -34, 125)
 
 [node name="PalmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
@@ -795,6 +794,7 @@ texture = ExtResource("12_hugh6")
 [node name="HandRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight"]
 position = Vector2(36, 127)
 rotation = -1.39758
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 36, 127)
 
 [node name="PalmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]
