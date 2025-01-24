@@ -389,7 +389,7 @@ libraries = {
 }
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 
 [node name="Hip" type="Bone2D" parent="Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
@@ -404,7 +404,6 @@ texture = ExtResource("2_orl2t")
 
 [node name="CalfRight" type="Bone2D" parent="Skeleton2D/Hip/LegRight"]
 position = Vector2(-2, 81)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -2, 81)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -434,7 +433,6 @@ position = Vector2(43, -135)
 texture = ExtResource("5_strow")
 
 [node name="Pants" type="Bone2D" parent="Skeleton2D/Hip"]
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -466,7 +464,6 @@ texture = ExtResource("8_6vuj2")
 
 [node name="PalmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]
 position = Vector2(4, 37)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 4, 37)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -482,7 +479,6 @@ texture = ExtResource("10_grjpk")
 
 [node name="ArmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
 position = Vector2(-47, -4)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -47, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft"]
@@ -499,7 +495,6 @@ texture = ExtResource("12_v4nce")
 
 [node name="PalmLeft" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
 position = Vector2(-4, 39)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -4, 39)
 auto_calculate_length_and_angle = false
 length = 16.0

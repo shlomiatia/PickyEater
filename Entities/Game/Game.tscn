@@ -34,7 +34,7 @@ polygon = PackedVector2Array(4, 1082, -3, 999, 96, 947, 130, 949, 378, 791, 831,
 anchor_mode = 0
 
 [node name="Mom" parent="." instance=ExtResource("7_0sulo")]
-position = Vector2(627, 440)
+position = Vector2(633, 505)
 
 [node name="Trash" parent="." instance=ExtResource("6_1kefv")]
 position = Vector2(416, 775)
@@ -48,20 +48,24 @@ texture = ExtResource("4_3xqdm")
 polygon = PackedVector2Array(-74, -58, 47, -73, 49, 57, -19, 72, -59, 64)
 
 [node name="Kid" parent="." instance=ExtResource("1_u5rtl")]
-position = Vector2(747, 857)
+position = Vector2(545, 909)
 
 [node name="Chair" type="Sprite2D" parent="."]
-position = Vector2(740, 931)
+position = Vector2(732, 907)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("4_gxm66")
 
 [node name="Table" type="Sprite2D" parent="."]
-position = Vector2(921, 962)
-scale = Vector2(0.33, 0.33)
+position = Vector2(954, 941)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_nk60b")
 
+[node name="Food" parent="." instance=ExtResource("8_vp4nc")]
+position = Vector2(793, 809)
+scale = Vector2(0.25, 0.25)
+
 [node name="Fork" parent="." instance=ExtResource("4_resh7")]
-position = Vector2(803, 883)
+position = Vector2(789, 839)
 label = "Fork"
 
 [node name="Sprite2D" parent="Fork" index="0"]
@@ -71,10 +75,6 @@ texture = ExtResource("3_a186j")
 
 [node name="CollisionPolygon2D" parent="Fork/StaticBody2D" index="0"]
 polygon = PackedVector2Array(-43, -5, 38, -13, 40, 6, -42, 4)
-
-[node name="Food" parent="." instance=ExtResource("8_vp4nc")]
-position = Vector2(810, 848)
-scale = Vector2(0.25, 0.25)
 
 [node name="Window" parent="." instance=ExtResource("6_1kefv")]
 position = Vector2(1809, 399)

@@ -2,6 +2,9 @@ class_name KidGoToItemState
 
 func enter(_player: Kid):
     pass
+    
+func cancel(_player: Kid) -> void:
+    pass
 
 func _process(player: Kid, delta: float) -> void:
     if player.process_walk(delta):
