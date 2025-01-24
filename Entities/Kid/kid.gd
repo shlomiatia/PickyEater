@@ -1,6 +1,6 @@
 class_name Kid extends Node2D
 
-const speed: float = 500.0
+const speed: float = 250.0
 const scale_base: float = 0.5
 
 var target_position: Vector2
@@ -10,6 +10,7 @@ var legs_offset: float = 120.0
 var current_enum: KidStateMachine.KidStateEnum
 var item_label: Label
 var dialog_animation_player: AnimationPlayer
+var animation_player: AnimationPlayer
 var dialog_label: Label
 var item: Node2D
 var scenery: Node2D
@@ -17,6 +18,7 @@ var scenery: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
+    animation_player = get_node("AnimationPlayer")
     dialog_animation_player = get_node("DialogAnimationPlayer")
     dialog_label = get_node("Label")
     item_label = get_node("/root/Game/CanvasLayer/Label")
