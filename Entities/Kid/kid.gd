@@ -6,10 +6,11 @@ var target_position: Vector2
 var sprite2d: Sprite2D
 var floor_min_max: Vector2
 var legs_offset: float
-var current_enum: KidStateMachine.PlayerStateEnum
+var current_enum: KidStateMachine.KidStateEnum
 var item_label: Label
 var animation_player: AnimationPlayer
 var dialog_label: Label
+var item: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,31 +48,32 @@ func _unhandled_input(event: InputEvent):
         if event.is_pressed():
             if event.button_index == MOUSE_BUTTON_LEFT:
                 var mouse_position = event.global_position
-                var y: float =  mouse_position.y - legs_offset
-                var potential_target_position = Vector2(mouse_position.x, y)
                 var object = PointCast.get_node_at_point(mouse_position)
-                var dialog = DataProvider.get_data().get(object.get_parent().name)
-                if dialog != null:
-                    dialog_label.text = dialog
-                    animation_player.play("Show")
-                #var item = PointCast.get_node_at_point(mouse_position, "items")
-                #if item != null:
-                    #move_to_object_at(potential_target_position)
-                    #target_scenery = null
-                    #target_item = item
-                    #return
-                #var scenery = PointCast.get_node_at_point(mouse_position, "scenery")
-                #if scenery != null: 
-                    #move_to_object_at(potential_target_position)
-                    #target_item = null
-                    #target_scenery = scenery
-                    #return
-                var can_move = object.is_in_group("floor")
-                if can_move:
-                    move_to(potential_target_position)
-                else: 
-                    target_position = Vector2.ZERO
-             
+                if object != null:
+                    KidStateMachine.get_current(self).handle_object(self, object, mouse_position)
+                    
+func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
+    var dialog = DataProvider.get_data().get(object.get_parent().name)
+    if dialog != null:
+        show_dialog(dialog)
+    if object.is_in_group("items"):
+        item = object.get_parent()
+        Input.set_custom_mouse_cursor(item.get_node("Sprite2D").texture)
+        KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.ITEM)
+        return
+    var can_move = object.is_in_group("floor")
+    if can_move:
+        var y: float =  mouse_position.y - legs_offset
+        var potential_target_position = Vector2(mouse_position.x, y)
+        move_to(potential_target_position)
+    else: 
+        target_position = Vector2.ZERO
+
+func show_dialog(dialog: String):
+    dialog_label.text = dialog
+    animation_player.seek(0)
+    animation_player.play("Show")
+ 
 func move_to_object_at(potential_target_position: Vector2):                    
     if(potential_target_position.y < floor_min_max.x):
         potential_target_position.y = floor_min_max.x 
@@ -84,4 +86,4 @@ func move_to(potential_target_position: Vector2):
         sprite2d.scale.x = absScaleX
     else:
         sprite2d.scale.x = -absScaleX
-    KidStateMachine.change_state(self, KidStateMachine.PlayerStateEnum.WALK)          
+    KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.WALK)          

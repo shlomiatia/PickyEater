@@ -1,19 +1,21 @@
 extends Node
 
-enum PlayerStateEnum {
+enum KidStateEnum {
     STAND,
     WALK,
+    ITEM
 }
 
 var states = {
-   PlayerStateEnum.STAND: KidStandState.new(),
-   PlayerStateEnum.WALK: KidWalkState.new(),
+   KidStateEnum.STAND: KidStandState.new(),
+   KidStateEnum.WALK: KidWalkState.new(),
+   KidStateEnum.ITEM: KidItemState.new(),
 }
 
 func get_current(player: Kid) -> Object:
    return states[player.current_enum] if player.current_enum != null else null
 
-func change_state(player: Kid, state: PlayerStateEnum, delta = null):
+func change_state(player: Kid, state: KidStateEnum, delta = null):
    if delta != null:
        change_state(player, state)
        get_current(player)._process(player, delta)

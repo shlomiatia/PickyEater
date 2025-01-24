@@ -15,5 +15,10 @@ func get_node_at_point(point: Vector2) -> Node2D:
     var space_state = get_world_2d().direct_space_state
     var results = space_state.intersect_point(query)
     if results.size() > 0:
-        return results[0]["collider"] as Node2D;
+        results = results.map(func(result): return result["collider"] as Node2D)
+        for result in results:
+            if !result.is_in_group("floor"):
+                return result
+                
+        return results[0]
     return null

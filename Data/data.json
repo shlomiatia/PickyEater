@@ -5,8 +5,16 @@
             "Text": "It's my mom"
         },
         {
-            "Id": "Door",
-            "Text": "It's a door"
+            "Id": "Window",
+            "Text": "It's a window"
+        },
+        {
+            "Id": "Bottle.Mom",
+            "Text": "She doesn't want that"
+        },
+        {
+            "Id": "Bottle.Window",
+            "Text": "<Solution>"
         }
         ]
 }

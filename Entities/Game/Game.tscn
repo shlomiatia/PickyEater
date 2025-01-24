@@ -1,12 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://vdc0qiq7rqkv"]
+[gd_scene load_steps=13 format=3 uid="uid://vdc0qiq7rqkv"]
 
+[ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_jp0tb"]
 [ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="1_u5rtl"]
-[ext_resource type="Texture2D" uid="uid://jtwude6jbf6r" path="res://Textures/Backgrounnd.jpg" id="1_v25t4"]
+[ext_resource type="Texture2D" uid="uid://b1ul17ah7owgc" path="res://Textures/WindowOpened.png" id="3_12h6r"]
 [ext_resource type="Texture2D" uid="uid://cs0cfyoj4oi5m" path="res://Textures/Bottle.png" id="4_0u7fg"]
 [ext_resource type="PackedScene" uid="uid://pe1hw82xabbc" path="res://Entities/Item/Item.tscn" id="4_resh7"]
 [ext_resource type="PackedScene" uid="uid://c6usj2w2o7ksj" path="res://Entities/Scenery/Scenery.tscn" id="6_1kefv"]
 [ext_resource type="Texture2D" uid="uid://dcibe3slxl1d1" path="res://Textures/Glass.png" id="6_5wc7u"]
-[ext_resource type="Texture2D" uid="uid://b4mvvenxbmdoj" path="res://Textures/Door.png" id="6_6rxri"]
 [ext_resource type="PackedScene" uid="uid://h2dl5fktjftg" path="res://Entities/Mom/Mom.tscn" id="7_0sulo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8w10b"]
@@ -17,10 +17,6 @@ size = Vector2(34, 115)
 resource_local_to_scene = true
 size = Vector2(20, 58)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gihdf"]
-resource_local_to_scene = true
-size = Vector2(155, 569)
-
 [sub_resource type="SystemFont" id="SystemFont_xnvh7"]
 
 [sub_resource type="Theme" id="Theme_jayqm"]
@@ -30,20 +26,29 @@ default_font_size = 48
 [node name="Game" type="Node2D"]
 
 [node name="Backgrounnd" type="Sprite2D" parent="."]
-position = Vector2(1404, 542)
-scale = Vector2(1.75, 1.75)
-texture = ExtResource("1_v25t4")
+position = Vector2(960, 540)
+texture = ExtResource("1_jp0tb")
 
 [node name="Floor" type="StaticBody2D" parent="." groups=["floor"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor"]
-polygon = PackedVector2Array(97, 1074, 94, 986, 315, 862, 1244, 860, 1304, 841, 1342, 812, 1339, 787, 2809, 810, 2804, 1080, 2804, 1080)
+polygon = PackedVector2Array(4, 1082, -3, 999, 96, 947, 130, 949, 378, 791, 1626, 787, 1924, 977, 1922, 1081)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
+[node name="Window" parent="." instance=ExtResource("6_1kefv")]
+position = Vector2(1809, 438)
+label = "Window"
+
+[node name="Sprite2D" parent="Window" index="0"]
+texture = ExtResource("3_12h6r")
+
+[node name="CollisionPolygon2D" parent="Window/StaticBody2D" index="0"]
+polygon = PackedVector2Array(-61, -160, -58, 117, 115, 144, 116, -178)
+
 [node name="Bottle" parent="." instance=ExtResource("4_resh7")]
-position = Vector2(1172, 747)
+position = Vector2(1088, 901)
 label = "Bottle"
 
 [node name="Sprite2D" parent="Bottle" index="0"]
@@ -55,7 +60,7 @@ position = Vector2(1, -2.5)
 shape = SubResource("RectangleShape2D_8w10b")
 
 [node name="Glass" parent="." instance=ExtResource("4_resh7")]
-position = Vector2(1201, 606)
+position = Vector2(1185, 927)
 label = "Glass"
 
 [node name="Sprite2D" parent="Glass" index="0"]
@@ -65,19 +70,6 @@ texture = ExtResource("6_5wc7u")
 [node name="CollisionShape2D" parent="Glass/StaticBody2D" index="0"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_bx4iq")
-
-[node name="Door" parent="." instance=ExtResource("6_1kefv")]
-position = Vector2(218, 650)
-label = "Door"
-
-[node name="Sprite2D" parent="Door" index="0"]
-position = Vector2(-8, 8)
-scale = Vector2(1.75, 1.75)
-texture = ExtResource("6_6rxri")
-
-[node name="CollisionShape2D" parent="Door/StaticBody2D" index="0"]
-position = Vector2(-4.5, 14.5)
-shape = SubResource("RectangleShape2D_gihdf")
 
 [node name="Mom" parent="." instance=ExtResource("7_0sulo")]
 position = Vector2(820, 595)
@@ -94,6 +86,6 @@ offset_right = 90.0
 offset_bottom = 73.0
 theme = SubResource("Theme_jayqm")
 
+[editable path="Window"]
 [editable path="Bottle"]
 [editable path="Glass"]
-[editable path="Door"]
