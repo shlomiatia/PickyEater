@@ -14,14 +14,15 @@ var animation_player: AnimationPlayer
 var dialog_label: Label
 var item: Node2D
 var scenery: Node2D
+var mom: Mom
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
     animation_player = get_node("AnimationPlayer")
     dialog_animation_player = get_node("DialogAnimationPlayer")
     dialog_label = get_node("Label")
     item_label = get_node("/root/Game/CanvasLayer/Label")
+    mom = get_node("/root/Game/Mom")
     var floor_body = get_node("/root/Game/Floor")
     var collision_polygon_2d = floor_body.get_child(0) as CollisionPolygon2D
     var min_y = INF
