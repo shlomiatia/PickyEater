@@ -40,6 +40,10 @@ texture = ExtResource("3_a186j")
 [node name="CollisionPolygon2D" parent="Fork/StaticBody2D" index="0"]
 polygon = PackedVector2Array(-29, 32, 9, -39, 32, -30, -21, 37)
 
+[node name="Food" parent="." instance=ExtResource("8_vp4nc")]
+position = Vector2(1019, 973)
+scale = Vector2(0.25, 0.25)
+
 [node name="Window" parent="." instance=ExtResource("6_1kefv")]
 position = Vector2(1809, 399)
 label = "Window"
@@ -65,9 +69,6 @@ offset_top = 50.0
 offset_right = 90.0
 offset_bottom = 73.0
 theme = SubResource("Theme_jayqm")
-
-[node name="Food" parent="." instance=ExtResource("8_vp4nc")]
-position = Vector2(565, 227)
 
 [editable path="Fork"]
 [editable path="Window"]

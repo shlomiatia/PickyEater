@@ -57,7 +57,10 @@ func _unhandled_input(event: InputEvent):
 func process_walk(delta: float) -> bool:
     if target_position != Vector2.ZERO:
         global_position = global_position.move_toward(target_position, delta * speed)
-        if global_position == target_position:
+        var y: float = global_position.y + legs_offset
+        var potential_target_position = Vector2(global_position.x, y)
+        var object = PointCast.get_node_at_point(potential_target_position)
+        if global_position == target_position || object == null:
             target_position = Vector2.ZERO
             return true
     return false
@@ -76,22 +79,18 @@ func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
         return
     var can_move = object.is_in_group("floor")
     if can_move:
-        var y: float =  mouse_position.y - legs_offset
+        var y: float = mouse_position.y - legs_offset
         var potential_target_position = Vector2(mouse_position.x, y)
         move_to(potential_target_position)
         KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.WALK)      
     else: 
         target_position = Vector2.ZERO
+    
 
 func show_dialog(dialog: String):
     dialog_label.text = dialog
     animation_player.seek(0)
     animation_player.play("Show")
- 
-func move_to_object_at(potential_target_position: Vector2):                    
-    if(potential_target_position.y < floor_min_max.x):
-        potential_target_position.y = floor_min_max.x 
-    move_to(potential_target_position)
         
 func move_to(potential_target_position: Vector2):
     target_position = potential_target_position
