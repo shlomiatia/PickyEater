@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://vdc0qiq7rqkv"]
+[gd_scene load_steps=11 format=3 uid="uid://vdc0qiq7rqkv"]
 
 [ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_jp0tb"]
 [ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="1_u5rtl"]
@@ -6,16 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cs0cfyoj4oi5m" path="res://Textures/Bottle.png" id="4_0u7fg"]
 [ext_resource type="PackedScene" uid="uid://pe1hw82xabbc" path="res://Entities/Item/Item.tscn" id="4_resh7"]
 [ext_resource type="PackedScene" uid="uid://c6usj2w2o7ksj" path="res://Entities/Scenery/Scenery.tscn" id="6_1kefv"]
-[ext_resource type="Texture2D" uid="uid://dcibe3slxl1d1" path="res://Textures/Glass.png" id="6_5wc7u"]
 [ext_resource type="PackedScene" uid="uid://h2dl5fktjftg" path="res://Entities/Mom/Mom.tscn" id="7_0sulo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8w10b"]
 resource_local_to_scene = true
 size = Vector2(34, 115)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx4iq"]
-resource_local_to_scene = true
-size = Vector2(20, 58)
 
 [sub_resource type="SystemFont" id="SystemFont_xnvh7"]
 
@@ -59,18 +54,6 @@ texture = ExtResource("4_0u7fg")
 position = Vector2(1, -2.5)
 shape = SubResource("RectangleShape2D_8w10b")
 
-[node name="Glass" parent="." instance=ExtResource("4_resh7")]
-position = Vector2(1185, 927)
-label = "Glass"
-
-[node name="Sprite2D" parent="Glass" index="0"]
-scale = Vector2(1.75, 1.75)
-texture = ExtResource("6_5wc7u")
-
-[node name="CollisionShape2D" parent="Glass/StaticBody2D" index="0"]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_bx4iq")
-
 [node name="Mom" parent="." instance=ExtResource("7_0sulo")]
 position = Vector2(820, 595)
 
@@ -88,4 +71,3 @@ theme = SubResource("Theme_jayqm")
 
 [editable path="Window"]
 [editable path="Bottle"]
-[editable path="Glass"]

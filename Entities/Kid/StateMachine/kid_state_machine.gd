@@ -3,13 +3,17 @@ extends Node
 enum KidStateEnum {
     STAND,
     WALK,
-    ITEM
+    ITEM,
+    GO_TO_ITEM,
+    GO_TO_SCENERY
 }
 
 var states = {
-   KidStateEnum.STAND: KidStandState.new(),
-   KidStateEnum.WALK: KidWalkState.new(),
-   KidStateEnum.ITEM: KidItemState.new(),
+    KidStateEnum.STAND: KidStandState.new(),
+    KidStateEnum.WALK: KidWalkState.new(),
+    KidStateEnum.ITEM: KidItemState.new(),
+    KidStateEnum.GO_TO_ITEM: KidGoToItemState.new(),
+    KidStateEnum.GO_TO_SCENERY: KidGoToSceneryState.new(),
 }
 
 func get_current(player: Kid) -> Object:

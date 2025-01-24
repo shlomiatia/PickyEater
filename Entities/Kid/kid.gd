@@ -1,5 +1,6 @@
 class_name Kid extends Node2D
 
+const speed: float = 500.0
 const scale_base: float = 0.45
 
 var target_position: Vector2
@@ -11,6 +12,7 @@ var item_label: Label
 var animation_player: AnimationPlayer
 var dialog_label: Label
 var item: Node2D
+var scenery: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -52,6 +54,14 @@ func _unhandled_input(event: InputEvent):
                 if object != null:
                     KidStateMachine.get_current(self).handle_object(self, object, mouse_position)
                     
+func process_walk(delta: float) -> bool:
+    if target_position != Vector2.ZERO:
+        global_position = global_position.move_toward(target_position, delta * speed)
+        if global_position == target_position:
+            target_position = Vector2.ZERO
+            return true
+    return false
+                    
 func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
     var dialog = DataProvider.get_data().get(object.get_parent().name)
     if dialog != null:
@@ -66,6 +76,7 @@ func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
         var y: float =  mouse_position.y - legs_offset
         var potential_target_position = Vector2(mouse_position.x, y)
         move_to(potential_target_position)
+        KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.WALK)      
     else: 
         target_position = Vector2.ZERO
 
@@ -77,7 +88,7 @@ func show_dialog(dialog: String):
 func move_to_object_at(potential_target_position: Vector2):                    
     if(potential_target_position.y < floor_min_max.x):
         potential_target_position.y = floor_min_max.x 
-        move_to(potential_target_position)
+    move_to(potential_target_position)
         
 func move_to(potential_target_position: Vector2):
     target_position = potential_target_position
@@ -86,4 +97,4 @@ func move_to(potential_target_position: Vector2):
         sprite2d.scale.x = absScaleX
     else:
         sprite2d.scale.x = -absScaleX
-    KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.WALK)          
+        
