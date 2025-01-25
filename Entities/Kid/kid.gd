@@ -58,10 +58,12 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent):
     if event is InputEventMouseMotion:
         var object = PointCast.get_node_at_point(event.global_position)
+        var text = ""
+        if current_enum == KidStateMachine.KidStateEnum.ITEM && item != null:
+            text = "Use %s on " % item.label
         if object != null && "label" in object.get_parent():
-            object_label.text = object.get_parent().label
-        else:
-            object_label.text = ""
+            text = text + object.get_parent().label
+        object_label.text = text
     if event is InputEventMouseButton:
         if event.is_pressed():
             if event.button_index == MOUSE_BUTTON_LEFT:

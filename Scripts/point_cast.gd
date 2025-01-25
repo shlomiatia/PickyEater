@@ -17,8 +17,8 @@ func get_node_at_point(point: Vector2) -> Node2D:
     if results.size() > 0:
         results = results.map(func(result): return result["collider"] as Node2D)
         for result in results:
-            if !result.is_in_group("floor"):
+            if !result.is_in_group("floor") and result.get_parent().visible:
                 return result
-                
-        return results[0]
+        if results[0].get_parent().visible:
+            return results[0]
     return null

@@ -12,9 +12,12 @@ func _process(player: Kid, delta: float) -> void:
     if player.process_walk(delta):
         if player.item.name == "Food1" && player.scenery == null:
             player.item.empty()
-            player.animation_player.play("throw")
+            #player.animation_player.play("throw")
             player.show_mom_dialog("How lovely, you must be craving for a second!")
             player.mom.move_to(player.get_node("/root/Game/Food1"))
+            KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.WALK)
+            player.move_to(player.get_node("/root/Game/Side").global_position)
+            
         elif player.item.name == "Food2" && player.scenery == null:
             player.item.empty()
             player.animation_player.play("throw")
