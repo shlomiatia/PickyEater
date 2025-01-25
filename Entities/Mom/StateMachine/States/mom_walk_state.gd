@@ -10,10 +10,10 @@ func _process(mom: Mom, delta: float) -> void:
     mom.global_position = mom.global_position.move_toward(mom.target_node.global_position, delta * speed)
     if mom.global_position == mom.target_node.global_position:
         if mom.target_node.name == "Sink":
-            MomStateMachine.change_state(mom, MomStateMachine.MomStateEnum.WASH)
+            mom.get_node("/root/Game/FakeFork").show()
+            MomStateMachine.change_state(mom, MomStateMachine.MomStateEnum.DUCK)
             mom.target_node = null
         elif mom.target_node.name == "Food1":
-            #mom.get_node("/root/Game/Fork").show()
             var food = mom.get_node("/root/Game/Food1")
             food.sprite2d.texture = load("res://Textures/Food/Worms.png")
             food.name = "Food2"

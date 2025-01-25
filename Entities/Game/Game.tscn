@@ -202,6 +202,13 @@ texture = ExtResource("5_nk60b")
 position = Vector2(822, 850)
 scale = Vector2(0.25, 0.25)
 
+[node name="FakeFork" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1670, 1028)
+rotation = 0.598648
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_a186j")
+
 [node name="Fork" parent="." instance=ExtResource("4_resh7")]
 position = Vector2(802, 890)
 label = "Fork"
