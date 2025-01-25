@@ -158,11 +158,15 @@ polygon = PackedVector2Array(4, 1082, -3, 999, 96, 947, 130, 949, 378, 791, 831,
 anchor_mode = 0
 
 [node name="Window" parent="." instance=ExtResource("6_1kefv")]
-position = Vector2(1809, 399)
+position = Vector2(1809, 788)
 label = "Window"
 
 [node name="Sprite2D" parent="Window" index="0"]
+position = Vector2(0, -389)
 texture = ExtResource("3_ed87o")
+
+[node name="StaticBody2D" parent="Window" index="1"]
+position = Vector2(0, -389)
 
 [node name="CollisionPolygon2D" parent="Window/StaticBody2D" index="0"]
 polygon = PackedVector2Array(-61, -160, -58, 117, 115, 144, 116, -178)
@@ -208,7 +212,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_a186j")
 
 [node name="CollisionPolygon2D" parent="Fork/StaticBody2D" index="0"]
-polygon = PackedVector2Array(-43, -5, 38, -13, 40, 6, -42, 4)
+polygon = PackedVector2Array(-43, -11, 38, -13, 40, 6, -42, 4)
 
 [node name="Worm" parent="." instance=ExtResource("4_resh7")]
 visible = false

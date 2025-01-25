@@ -21,6 +21,14 @@
             "Text": "Mom>Look at you, holding a fork like a champ"
         },
         {
+            "Id": "Fork.Food",
+            "Text": "I'm not touching that"
+        },
+        {
+            "Id": "Food.Fork",
+            "Text": "Not going to happen, forket about it"
+        },
+        {
             "Id": "Fork.Trash",
             "Text": "I would never throw away Forky, he’s one of my two best friends!"
         },
@@ -91,6 +99,14 @@
         {
             "Id": "Worm.Dog",
             "Text": "Mmmm… no"
+        },
+        {
+            "Id": "Worm.Food3",
+            "Text": "Gross"
+        },
+        {
+            "Id": "Food3.Worm",
+            "Text": "She's trying to poison me"
         },
         {
             "Id": "Worm.Trash",

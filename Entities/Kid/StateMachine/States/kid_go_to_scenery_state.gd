@@ -27,7 +27,7 @@ func _process(player: Kid, delta: float) -> void:
             player.play_sound(load("res://Sounds/trash sound.mp3"))
         elif player.item.name == "Food2" && player.scenery.name == "Dog":
             player.animation_player.play("throw")
-            player.scenery.get_node("Sprite2D").texture = load("res://Textures/Dog sick .png")
+            player.scenery.get_node("Sprite2D").texture = load("res://Textures/Dog sick.png")
             player.scenery = null
             player.item = player.get_node("/root/Game/Food2")
             player.after_throw_state =  KidStateMachine.KidStateEnum.GO_TO_ITEM
