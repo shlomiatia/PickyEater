@@ -121,10 +121,10 @@ texture = ExtResource("8_ufhwn")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="DialogPopup" parent="CanvasLayer2" instance=ExtResource("1_abdxt")]
-z_index = -100
-
 [node name="PowFood" parent="CanvasLayer2" instance=ExtResource("13_kq84r")]
 z_index = 100
+
+[node name="DialogPopup" parent="CanvasLayer2" instance=ExtResource("1_abdxt")]
+z_index = -100
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

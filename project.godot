@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PickyEater"
-run/main_scene="res://Entities/Game/Game.tscn"
+run/main_scene="res://Entities/MainScreen/Main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,7 @@ KidStateMachine="*res://Entities/Kid/StateMachine/kid_state_machine.gd"
 DataProvider="*res://Scripts/data_provider.gd"
 MomStateMachine="*res://Entities/Mom/StateMachine/mom_state_machine.gd"
 AudioPlayer="*res://Entities/AudioPlayer/AudioPlayer.tscn"
+DialogsManager="*res://Scripts/dialogsManager.gd"
 
 [display]
 
