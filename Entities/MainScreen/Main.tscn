@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhp3d1ec1dppe"]
+[gd_scene load_steps=20 format=3 uid="uid://bhp3d1ec1dppe"]
 
 [ext_resource type="PackedScene" uid="uid://bp6juu24l6k1s" path="res://Entities/DialogPopup/DialogPopup.tscn" id="1_abdxt"]
 [ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_s7snu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/StartBtn.gd" id="7_inpvj"]
 [ext_resource type="Texture2D" uid="uid://bo8foveufodqf" path="res://Textures/Food/Broccoli.png" id="8_ufhwn"]
 [ext_resource type="Texture2D" uid="uid://c5mnp78v0q6m3" path="res://Textures/ui/Tv.png" id="8_uqolx"]
+[ext_resource type="PackedScene" uid="uid://d2i48w56j4wjq" path="res://Entities/PowFood/PowFood.tscn" id="13_kq84r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4px35"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -32,9 +33,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main" type="Node2D"]
-
-[node name="DialogPopup" parent="." instance=ExtResource("1_abdxt")]
-z_index = -100
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.741176, 0.741176, 0.741176, 1)
@@ -62,6 +60,7 @@ scale = Vector2(-2.3, 2.3)
 script = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(566, 250)
@@ -119,5 +118,13 @@ position = Vector2(1517.65, 817.746)
 rotation = 0.164685
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("8_ufhwn")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="DialogPopup" parent="CanvasLayer2" instance=ExtResource("1_abdxt")]
+z_index = -100
+
+[node name="PowFood" parent="CanvasLayer2" instance=ExtResource("13_kq84r")]
+z_index = 100
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

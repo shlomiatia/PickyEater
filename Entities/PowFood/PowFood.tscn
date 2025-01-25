@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2i48w56j4wjq"]
+
+[ext_resource type="Texture2D" uid="uid://b47rp16hf5pp" path="res://Textures/ui/Slide 16_9 - 1.png" id="1_7cjeo"]
+[ext_resource type="Script" path="res://Entities/PowFood/pow_food.gd" id="1_vycf6"]
+[ext_resource type="Texture2D" uid="uid://tsiae26rkguu" path="res://Textures/ui/pow.png" id="2_pwoac"]
+[ext_resource type="Texture2D" uid="uid://bo8foveufodqf" path="res://Textures/Food/Broccoli.png" id="2_vh6f5"]
+[ext_resource type="Theme" uid="uid://bpaaemf67uvog" path="res://Fonts/textTheme.tres" id="3_p7vrt"]
+
+[node name="PowFood" type="Node2D"]
+script = ExtResource("1_vycf6")
+
+[node name="Slide169-1" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_7cjeo")
+
+[node name="Pow" type="Sprite2D" parent="."]
+position = Vector2(958, 539)
+texture = ExtResource("2_pwoac")
+
+[node name="Broccoli" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(959, 473)
+scale = Vector2(2.30556, 2.30556)
+texture = ExtResource("2_vh6f5")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 518.0
+offset_top = 769.0
+offset_right = 1396.0
+offset_bottom = 916.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_p7vrt")
+theme_override_font_sizes/font_size = 124
+text = "Infected Broccoli!"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 390.0
+offset_top = 74.0
+offset_right = 1521.0
+offset_bottom = 876.0
+stretch_mode = 4
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
