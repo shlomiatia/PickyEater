@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://vdc0qiq7rqkv"]
+[gd_scene load_steps=26 format=3 uid="uid://vdc0qiq7rqkv"]
 
 [ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_jp0tb"]
 [ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="1_u5rtl"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dn7i86iowp80s" path="res://Textures/Food/Bird 2.png" id="15_318nl"]
 [ext_resource type="Texture2D" uid="uid://u0ot6cul0bje" path="res://Textures/Food/Bird 1.png" id="16_sf2tf"]
 [ext_resource type="Texture2D" uid="uid://7whi4arofs8i" path="res://Textures/Food/Bird 3.png" id="17_ey48n"]
+[ext_resource type="AudioStream" uid="uid://cgvqpngtk15yf" path="res://Sounds/laugh.mp3" id="20_gjyl3"]
 
 [sub_resource type="Theme" id="Theme_jayqm"]
 default_font = ExtResource("14_q8fnc")
@@ -30,7 +31,7 @@ default_font_size = 48
 
 [sub_resource type="Animation" id="Animation_yewhx"]
 resource_name = "Fly"
-length = 4.0
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,6 +82,21 @@ tracks/3/keys = {
 "method": &"eat"
 }]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_gjyl3")
+}],
+"times": PackedFloat32Array(3)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_3uqxh"]
 length = 0.001
@@ -197,6 +213,7 @@ polygon = PackedVector2Array(-43, -5, 38, -13, 40, 6, -42, 4)
 [node name="Worm" parent="." instance=ExtResource("4_resh7")]
 visible = false
 position = Vector2(919, 852)
+label = "Worm"
 
 [node name="Sprite2D" parent="Worm" index="0"]
 scale = Vector2(0.25, 0.25)
@@ -210,6 +227,7 @@ position = Vector2(1794, 986)
 label = "Bobby"
 
 [node name="Sprite2D" parent="Dog" index="0"]
+position = Vector2(-27, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_hq23r")
 
@@ -259,6 +277,11 @@ texture = ExtResource("15_318nl")
 libraries = {
 "": SubResource("AnimationLibrary_30854")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Bird"]
+
+[node name="Side" type="Node2D" parent="."]
+position = Vector2(214, 934)
 
 [editable path="Window"]
 [editable path="Trash"]

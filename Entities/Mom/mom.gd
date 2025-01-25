@@ -10,12 +10,16 @@ var target_node: Node2D
 var animation_player: AnimationPlayer
 var floor_min_max: Vector2
 var skeleton2d: Skeleton2D
+var audio_stream_player: AudioStreamPlayer
+var wash_audio: AudioStream
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
     animation_player = get_node("AnimationPlayer")
+    audio_stream_player = get_node("AudioStreamPlayer")
     var floor_body = get_node("/root/Game/Floor")
+    wash_audio = load("res://Sounds/washing sound.mp3")
     var collision_polygon_2d = floor_body.get_child(0) as CollisionPolygon2D
     var min_y = INF
     var max_y = -INF

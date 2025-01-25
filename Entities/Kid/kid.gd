@@ -15,14 +15,29 @@ var scenery: Node2D
 var dialog_label: Label
 var mom: Mom
 var after_throw_state: KidStateMachine.KidStateEnum = KidStateMachine.KidStateEnum.STAND
+var audio_stream_player: AudioStreamPlayer;
+var kid_sounds: Array[AudioStream]
+var mom_sounds: Array[AudioStream]
+var pickup_sound: AudioStream
+var random_number_generator = RandomNumberGenerator.new()
 
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
     animation_player = get_node("AnimationPlayer")
+    audio_stream_player = get_node("AudioStreamPlayer")
     object_label = get_node("/root/Game/CanvasLayer/Object")
     dialog_label = get_node("/root/Game/CanvasLayer/Dialog")
     mom = get_node("/root/Game/Mom")
     var floor_body = get_node("/root/Game/Floor")
+    kid_sounds = [
+        preload("res://Sounds/boy angry talk.mp3"),
+        preload("res://Sounds/boy talk.mp3"),
+   ]
+    mom_sounds = [
+        preload("res://Sounds/mom angry talk.mp3"),
+        preload("res://Sounds/mom talk.mp3"),
+   ]
+    pickup_sound = load("res://Sounds/pick-up sound.mp3")
     var collision_polygon_2d = floor_body.get_child(0) as CollisionPolygon2D
     var min_y = INF
     var max_y = -INF
@@ -43,10 +58,12 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent):
     if event is InputEventMouseMotion:
         var object = PointCast.get_node_at_point(event.global_position)
+        var text = ""
+        if current_enum == KidStateMachine.KidStateEnum.ITEM && item != null:
+            text = "Use %s on " % item.label
         if object != null && "label" in object.get_parent():
-            object_label.text = object.get_parent().label
-        else:
-            object_label.text = ""
+            text = text + object.get_parent().label
+        object_label.text = text
     if event is InputEventMouseButton:
         if event.is_pressed():
             if event.button_index == MOUSE_BUTTON_LEFT:
@@ -92,9 +109,16 @@ func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
 
 func show_dialog(dialog: String):
     dialog_label.ShowDialog(dialog, Color.DARK_BLUE)
+    play_sound(kid_sounds[random_number_generator.randi_range(0, kid_sounds.size() - 1)])
     
 func show_mom_dialog(dialog: String):
     dialog_label.ShowDialog(dialog, Color.DARK_RED)
+    play_sound(mom_sounds[random_number_generator.randi_range(0, mom_sounds.size() - 1)])
+    
+func play_sound(sound: AudioStream):
+    audio_stream_player.stop()
+    audio_stream_player.stream = sound
+    audio_stream_player.play()
         
 func move_to(potential_target_position: Vector2):
     target_position = potential_target_position

@@ -981,3 +981,5 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-5, 57)
 shape = SubResource("CapsuleShape2D_p2vom")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

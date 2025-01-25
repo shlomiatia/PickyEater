@@ -6,6 +6,7 @@ func enter(player: Kid):
 
 func _process(player: Kid, delta: float) -> void:
     if player.process_walk(delta):
+        print("what")
         KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.STAND)
 
 func handle_object(player: Kid, object: Node2D, mouse_position: Vector2):
