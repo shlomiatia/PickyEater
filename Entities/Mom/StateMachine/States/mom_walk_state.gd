@@ -23,6 +23,7 @@ func _process(mom: Mom, delta: float) -> void:
             fork.show()
             fork.name = "Fork1"
             mom.move_to(mom.get_node("/root/Game/Sink"))
+            mom.get_node("/root/Game/CanvasLayer2/PowFood")._pow_food(1)
         elif mom.target_node.name == "Exit":
             mom.target_node = null
             mom.hide()
@@ -30,6 +31,7 @@ func _process(mom: Mom, delta: float) -> void:
         elif mom.target_node.name == "Food2":
             var food = mom.get_node("/root/Game/Food2")
             food.sprite2d.texture = load("res://Textures/Food/Meatballs.png")
+            mom.get_node("/root/Game/CanvasLayer2/PowFood")._pow_food(2)
             food.name = "Food3"
             mom.move_to(mom.get_node("/root/Game/Exit"))
         
