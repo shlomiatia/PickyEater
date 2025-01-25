@@ -32,6 +32,12 @@ dialog_popup.kid,
 dialog_popup.dog
 ]
 
+const REMOTE_CONTROL_1 = preload("res://Textures/ui/Remote Control 1.png")
+
+func _ready() -> void:
+	Input.set_custom_mouse_cursor(REMOTE_CONTROL_1, Input.CURSOR_POINTING_HAND)
+
+
 func _on_pressed() -> void:
 	#var current_scene = self.get_tree().current_scene
 	#self.get_tree().root.add_child(new_scene)
