@@ -24,15 +24,18 @@ func _process(player: Kid, delta: float) -> void:
             player.scenery = null
             player.item = player.get_node("/root/Game/Food1")
             player.after_throw_state =  KidStateMachine.KidStateEnum.GO_TO_ITEM
+            player.play_sound(load("res://Sounds/trash sound.mp3"))
         elif player.item.name == "Food2" && player.scenery.name == "Dog":
             player.animation_player.play("throw")
             player.scenery.get_node("Sprite2D").texture = load("res://Textures/Dog sick .png")
             player.scenery = null
             player.item = player.get_node("/root/Game/Food2")
             player.after_throw_state =  KidStateMachine.KidStateEnum.GO_TO_ITEM
+            player.play_sound(load("res://Sounds/dog whining.mp3"))
         elif player.item.name == "Worm" && player.scenery.name == "Window":
             player.get_node("/root/Game/Window").get_node("Sprite2D").texture = load("res://Textures/WindowOpened.png")
             player.get_node("/root/Game/Bird").get_node("AnimationPlayer").play("Fly")
+            player.play_sound(load("res://Sounds/door slam.mp3"))
             
  
 func handle_object(_player: Kid, _object: Node2D, _mouse_position: Vector2):

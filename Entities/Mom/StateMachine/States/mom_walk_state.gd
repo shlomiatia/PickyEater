@@ -4,6 +4,7 @@ const speed: float = 250.0
 
 func enter(mom: Mom):
     mom.animation_player.play("Walk", -1, 2.0)
+    mom.audio_stream_player.stop()
     
 func _process(mom: Mom, delta: float) -> void:
     mom.global_position = mom.global_position.move_toward(mom.target_node.global_position, delta * speed)

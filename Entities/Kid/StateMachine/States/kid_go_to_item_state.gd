@@ -24,12 +24,15 @@ func _process(player: Kid, delta: float) -> void:
         elif player.item.name == "Fork" && player.scenery.name == "Dog":
             player.item.hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
+            player.play_sound(player.pickup_sound)
         elif player.item.name == "Food1" && player.scenery.name == "Trash":
             player.item.hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
+            player.play_sound(player.pickup_sound)
         elif player.item.name == "Food2" && player.scenery.name == "Dog":
             player.item.hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
+            player.play_sound(player.pickup_sound)
         elif player.item.name == "Food3" && player.scenery.name == "Window":
             player.show_dialog("Yach! Some worms fell off. They are still alive.")
             player.get_node("/root/Game/Worm").show()
@@ -37,6 +40,7 @@ func _process(player: Kid, delta: float) -> void:
         elif player.item.name == "Worm" && player.scenery.name == "Window":
             player.get_node("/root/Game/Worm").hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
+            player.play_sound(player.pickup_sound)
         
             
 func handle_object(_player: Kid, _object: Node2D, _mouse_position: Vector2):
