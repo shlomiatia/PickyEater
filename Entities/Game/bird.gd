@@ -12,3 +12,8 @@ func _process(_delta: float) -> void:
 
 func eat() -> void:
     get_node("/root/Game/Food3").empty()
+
+func show_outro() -> void:
+    get_node("/root/Game/Kid").show_outro = true
+    get_node("/root/Game/CanvasLayer2/DialogPopup")._outro_dialog()
+    

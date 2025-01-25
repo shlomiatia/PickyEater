@@ -1,7 +1,7 @@
 class_name DialogPopup
 extends Node2D
 
-var new_scene = preload("res://Entities/Game/Game.tscn").instantiate()
+
 const DEAD_DOG = preload("res://Textures/Frame 8.png")
 const OUTRO_TEXTS: Array[String] =["I did it! I survived dinner!",
 "...",
@@ -118,6 +118,11 @@ func _broccoli() -> void:
     
 func _start_game() -> void:
     var current_scene = self.get_tree().current_scene
+    var new_scene
+    if current_scene.name == "Main":
+         new_scene = load("res://Entities/Game/Game.tscn").instantiate()
+    else:
+        new_scene = load("res://Entities/MainScreen/Main.tscn").instantiate()
     self.get_tree().root.add_child(new_scene)
     self.get_tree().current_scene = new_scene
     current_scene.queue_free()

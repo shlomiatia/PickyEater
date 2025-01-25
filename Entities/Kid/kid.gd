@@ -20,6 +20,7 @@ var kid_sounds: Array[AudioStream]
 var mom_sounds: Array[AudioStream]
 var pickup_sound: AudioStream
 var random_number_generator = RandomNumberGenerator.new()
+var show_outro: bool = false
 
 func _ready() -> void:
     skeleton2d = get_node("Skeleton2D")
@@ -56,6 +57,8 @@ func _process(delta: float) -> void:
     skeleton2d.scale = Vector2(scaleSizeX, scaleSizeY)
             
 func _unhandled_input(event: InputEvent):
+    if show_outro:
+        return
     if event is InputEventMouseMotion:
         var object = PointCast.get_node_at_point(event.global_position)
         var text = ""
