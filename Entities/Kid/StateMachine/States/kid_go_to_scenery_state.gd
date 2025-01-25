@@ -36,8 +36,6 @@ func _process(player: Kid, delta: float) -> void:
         elif player.item.name == "Worm" && player.scenery.name == "Window":
             player.get_node("/root/Game/Window").get_node("Sprite2D").texture = load("res://Textures/WindowOpened.png")
             player.get_node("/root/Game/Bird").get_node("AnimationPlayer").play("Fly")
-            player.play_sound(load("res://Sounds/door slam.mp3"))
-            
  
 func handle_object(_player: Kid, _object: Node2D, _mouse_position: Vector2):
     pass
