@@ -92,6 +92,9 @@ func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
         show_dialog(dialog)
     if object.is_in_group("items"):
         item = object.get_parent()
+        if item.name == "Food3":
+            show_dialog("She’s intent on getting me killed.")
+            return
         var image = item.get_node("Sprite2D").texture.get_image()
         image.resize(64, 64)
         var small_texture = ImageTexture.create_from_image(image)

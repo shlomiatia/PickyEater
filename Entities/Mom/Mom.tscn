@@ -955,13 +955,12 @@ length = 16.0
 bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft/PalmLeft"]
-z_index = 1
 position = Vector2(15, 136)
 texture = ExtResource("10_l4epi")
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
-z_index = 1
+[node name="Sprite2D2" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
 position = Vector2(101, 142)
+scale = Vector2(1, 1)
 texture = ExtResource("11_yv6li")
 
 [node name="ArmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
@@ -973,12 +972,12 @@ position = Vector2(-23, 272)
 texture = ExtResource("12_hugh6")
 
 [node name="HandRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight"]
-position = Vector2(36, 127)
+position = Vector2(41, 141)
 rotation = -1.39758
 rest = Transform2D(1, 0, 0, 1, 36, 127)
 
 [node name="PalmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]
-position = Vector2(-84, 10)
+position = Vector2(-74.1496, 8.27648)
 rotation = 1.57508
 rest = Transform2D(1, 0, 0, 1, -84, 10)
 auto_calculate_length_and_angle = false
@@ -986,14 +985,12 @@ length = 16.0
 bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight/PalmRight"]
-z_index = 1
 position = Vector2(-117.381, 61.8452)
 rotation = 0.93501
 texture = ExtResource("13_p6rou")
 flip_h = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]
-z_index = 1
 position = Vector2(-54, 145)
 texture = ExtResource("14_p3dod")
 

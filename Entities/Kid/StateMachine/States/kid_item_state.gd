@@ -13,7 +13,6 @@ func cancel(player: Kid) -> void:
 
 func handle_object(player: Kid, object: Node2D, _mouse_position: Vector2):
     var key = "%s.%s" % [player.item.name, object.get_parent().name]
-    print(key)
     var dialog = DataProvider.get_data().get(key)
     if dialog != null:
         var parts = dialog.split(">")
