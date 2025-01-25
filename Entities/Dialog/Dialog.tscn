@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://colc00mnslue8"]
+[gd_scene load_steps=7 format=3 uid="uid://colc00mnslue8"]
 
+[ext_resource type="FontFile" uid="uid://dy32vgyx7vyrr" path="res://Fonts/RobotoCondensed-Bold.ttf" id="1_5gi0a"]
 [ext_resource type="Script" path="res://Entities/Dialog/dialog.gd" id="1_jh4ee"]
+
+[sub_resource type="Theme" id="Theme_d6scd"]
+default_font = ExtResource("1_5gi0a")
 
 [sub_resource type="Animation" id="Animation_qtrmb"]
 length = 0.001
@@ -41,6 +45,9 @@ _data = {
 
 [node name="Dialog" type="Label"]
 modulate = Color(1, 1, 1, 0)
+theme = SubResource("Theme_d6scd")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
 script = ExtResource("1_jh4ee")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

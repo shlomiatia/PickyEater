@@ -12,8 +12,6 @@ func _process(_delta: float) -> void:
 
 func ShowDialog(dialog: String, color: Color):
     self.text = dialog
+    self.add_theme_color_override("font_color", color)
     animation_player.seek(0)
-    animation_player.get_animation("Show").track_set_key_value(0, 0, color)
-    animation_player.get_animation("Show").track_set_key_value(0, 1, color)
-    animation_player.get_animation("Show").track_set_key_value(0, 2, Color(color, 0.0))
     animation_player.play("Show")

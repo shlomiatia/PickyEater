@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfj3fyo48rgbe"
+path="res://.godot/imported/mom angry talk.mp3-d47fec75620da73154ff3ff785cabd4b.mp3str"
+
+[deps]
+
+source_file="res://Sounds/mom angry talk.mp3"
+dest_files=["res://.godot/imported/mom angry talk.mp3-d47fec75620da73154ff3ff785cabd4b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

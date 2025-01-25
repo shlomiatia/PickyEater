@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbthnk3xt58yx"
+path="res://.godot/imported/snoring hard.mp3-179e1e80ef7827a1b593b3f3f04041c9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/snoring hard.mp3"
+dest_files=["res://.godot/imported/snoring hard.mp3-179e1e80ef7827a1b593b3f3f04041c9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

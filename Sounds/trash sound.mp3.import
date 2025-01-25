@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7lm1m3vh838r"
+path="res://.godot/imported/trash sound.mp3-fd34595d1612669bb20fd36a6bb9c0b9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/trash sound.mp3"
+dest_files=["res://.godot/imported/trash sound.mp3-fd34595d1612669bb20fd36a6bb9c0b9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

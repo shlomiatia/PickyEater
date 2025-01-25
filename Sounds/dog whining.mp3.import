@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c62at2jlj4jg4"
+path="res://.godot/imported/dog whining.mp3-16445b3515cc6b82fd8f94704db02401.mp3str"
+
+[deps]
+
+source_file="res://Sounds/dog whining.mp3"
+dest_files=["res://.godot/imported/dog whining.mp3-16445b3515cc6b82fd8f94704db02401.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

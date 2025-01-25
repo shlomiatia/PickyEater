@@ -14,18 +14,18 @@
 [ext_resource type="Texture2D" uid="uid://c4gpgt2b4t6hw" path="res://Textures/Dog.png" id="11_hq23r"]
 [ext_resource type="Texture2D" uid="uid://b5cv86n812p7j" path="res://Textures/Food/Worm.png" id="12_o35or"]
 [ext_resource type="PackedScene" uid="uid://colc00mnslue8" path="res://Entities/Dialog/Dialog.tscn" id="13_3nyhw"]
+[ext_resource type="FontFile" uid="uid://dy32vgyx7vyrr" path="res://Fonts/RobotoCondensed-Bold.ttf" id="14_q8fnc"]
 [ext_resource type="Script" path="res://Entities/Game/bird.gd" id="15_8ikmu"]
 [ext_resource type="Texture2D" uid="uid://dn7i86iowp80s" path="res://Textures/Food/Bird 2.png" id="15_318nl"]
 [ext_resource type="Texture2D" uid="uid://u0ot6cul0bje" path="res://Textures/Food/Bird 1.png" id="16_sf2tf"]
 [ext_resource type="Texture2D" uid="uid://7whi4arofs8i" path="res://Textures/Food/Bird 3.png" id="17_ey48n"]
 
-[sub_resource type="SystemFont" id="SystemFont_xnvh7"]
-
 [sub_resource type="Theme" id="Theme_jayqm"]
-default_font = SubResource("SystemFont_xnvh7")
+default_font = ExtResource("14_q8fnc")
 default_font_size = 48
 
 [sub_resource type="Theme" id="Theme_74o4m"]
+default_font = ExtResource("14_q8fnc")
 default_font_size = 48
 
 [sub_resource type="Animation" id="Animation_yewhx"]
@@ -219,7 +219,6 @@ polygon = PackedVector2Array(-110, -34, -93, -88, -69, -92, -38, -77, -20, -56, 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Object" type="Label" parent="CanvasLayer"]
-modulate = Color(0, 0, 0, 1)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -229,6 +228,10 @@ offset_right = 51.0
 offset_bottom = -50.0
 grow_vertical = 0
 theme = SubResource("Theme_jayqm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+text = "adsadasdsad"
 
 [node name="Dialog" parent="CanvasLayer" instance=ExtResource("13_3nyhw")]
 offset_left = 50.0

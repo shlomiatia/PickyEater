@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1kvl4n0wg474"
+path="res://.godot/imported/boy talk.mp3-374279bb772eb1045933600e9b8a8be7.mp3str"
+
+[deps]
+
+source_file="res://Sounds/boy talk.mp3"
+dest_files=["res://.godot/imported/boy talk.mp3-374279bb772eb1045933600e9b8a8be7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

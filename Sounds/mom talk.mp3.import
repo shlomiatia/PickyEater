@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp8nnvj05kyj5"
+path="res://.godot/imported/mom talk.mp3-94120dcd29e97cc2b469eef8c7f068a4.mp3str"
+
+[deps]
+
+source_file="res://Sounds/mom talk.mp3"
+dest_files=["res://.godot/imported/mom talk.mp3-94120dcd29e97cc2b469eef8c7f068a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

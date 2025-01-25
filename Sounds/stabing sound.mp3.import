@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnk5j0mq2x575"
+path="res://.godot/imported/stabing sound.mp3-eb57fbd3289e756d7c3ebf6b907ff9ed.mp3str"
+
+[deps]
+
+source_file="res://Sounds/stabing sound.mp3"
+dest_files=["res://.godot/imported/stabing sound.mp3-eb57fbd3289e756d7c3ebf6b907ff9ed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

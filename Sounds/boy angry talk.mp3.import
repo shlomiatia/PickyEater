@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7ysr5r6thk3h"
+path="res://.godot/imported/boy angry talk.mp3-247534931343ec568121da1377893999.mp3str"
+
+[deps]
+
+source_file="res://Sounds/boy angry talk.mp3"
+dest_files=["res://.godot/imported/boy angry talk.mp3-247534931343ec568121da1377893999.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

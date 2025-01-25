@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://eootfrrbgm3b"
+path="res://.godot/imported/game bg music stress loop.mp3-40179bbbbf19fbdc2f7ec5bcc80eb873.mp3str"
+
+[deps]
+
+source_file="res://Sounds/game bg music stress loop.mp3"
+dest_files=["res://.godot/imported/game bg music stress loop.mp3-40179bbbbf19fbdc2f7ec5bcc80eb873.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

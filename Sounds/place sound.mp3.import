@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vri8n3d81n0u"
+path="res://.godot/imported/place sound.mp3-ad5bdb17c5252b26069e3dfbada3bae4.mp3str"
+
+[deps]
+
+source_file="res://Sounds/place sound.mp3"
+dest_files=["res://.godot/imported/place sound.mp3-ad5bdb17c5252b26069e3dfbada3bae4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
