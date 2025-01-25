@@ -1,14 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp6juu24l6k1s"]
+[gd_scene load_steps=5 format=3 uid="uid://bp6juu24l6k1s"]
 
 [ext_resource type="Script" path="res://Entities/DialogPopup/dialog_popup.gd" id="1_1k0i2"]
 [ext_resource type="Texture2D" uid="uid://bvm81mrstsrvn" path="res://Textures/kiddialog.png" id="2_r3aq6"]
-[ext_resource type="FontFile" uid="uid://dy32vgyx7vyrr" path="res://Fonts/RobotoCondensed-Bold.ttf" id="3_m2wdl"]
+[ext_resource type="Theme" uid="uid://bpaaemf67uvog" path="res://Fonts/textTheme.tres" id="3_5sow3"]
 [ext_resource type="Texture2D" uid="uid://b8i2uikkosra3" path="res://Textures/momdialog.png" id="3_yojvf"]
-
-[sub_resource type="Theme" id="Theme_bwilo"]
-default_font = ExtResource("3_m2wdl")
-default_font_size = 52
-Label/colors/font_color = Color(0, 0, 0, 1)
 
 [node name="DialogPopup" type="Node2D"]
 z_index = 100
@@ -53,7 +48,7 @@ offset_left = 0.219971
 offset_top = -0.0210419
 offset_right = 0.796021
 offset_bottom = 23.6349
-theme = SubResource("Theme_bwilo")
+theme = ExtResource("3_5sow3")
 text = "placeholder place holder place"
 
 [node name="MomDialog" type="TextureRect" parent="CanvasLayer"]
@@ -84,7 +79,7 @@ offset_left = 0.275993
 offset_top = -0.0350342
 offset_right = -0.801025
 offset_bottom = -0.0200195
-theme = SubResource("Theme_bwilo")
+theme = ExtResource("3_5sow3")
 text = "placeholder place holder place"
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
