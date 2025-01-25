@@ -4,12 +4,14 @@ enum MomStateEnum {
     STAND,
     WALK,
     WASH,
+    DUCK
 }
 
 var states = {
     MomStateEnum.STAND: MomStandState.new(),
     MomStateEnum.WALK: MomWalkState.new(),
     MomStateEnum.WASH: MomWashState.new(),
+    MomStateEnum.DUCK: MomDuckState.new(),
 }
 
 func get_current(mom: Mom) -> Object:

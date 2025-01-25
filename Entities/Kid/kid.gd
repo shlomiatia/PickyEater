@@ -86,27 +86,27 @@ func process_walk(delta: float) -> bool:
 	return false
 					
 func handle_object_stand_walk(object: Node2D, mouse_position: Vector2):
-	var dialog = DataProvider.get_data().get(object.get_parent().name)
-	if dialog != null:
-		show_dialog(dialog)
-	if object.is_in_group("items"):
-		item = object.get_parent()
-		var image = item.get_node("Sprite2D").texture.get_image()
-		image.resize(64, 64)
-		var small_texture = ImageTexture.create_from_image(image)
-		Input.set_custom_mouse_cursor(small_texture)
-		KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.ITEM)
-		return
-	var can_move = object.is_in_group("floor")
-	if can_move:
-		var y: float = mouse_position.y - legs_offset
-		var potential_target_position = Vector2(mouse_position.x, y)
-		move_to(potential_target_position)
-		KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.WALK)      
-	else: 
-		target_position = Vector2.ZERO
-	
 
+    var dialog = DataProvider.get_data().get(object.get_parent().name)
+    if dialog != null:
+        show_dialog(dialog)
+    if object.is_in_group("items"):
+        item = object.get_parent()
+        var image = item.get_node("Sprite2D").texture.get_image()
+        image.resize(64, 64)
+        var small_texture = ImageTexture.create_from_image(image)
+        Input.set_custom_mouse_cursor(small_texture, Input.CURSOR_ARROW, Vector2(32, 32))
+        KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.ITEM)
+        return
+    var can_move = object.is_in_group("floor")
+    if can_move:
+        var y: float = mouse_position.y - legs_offset
+        var potential_target_position = Vector2(mouse_position.x, y)
+        move_to(potential_target_position)
+        KidStateMachine.change_state(self, KidStateMachine.KidStateEnum.WALK)      
+    else: 
+        target_position = Vector2.ZERO
+    
 func show_dialog(dialog: String):
 	dialog_label.ShowDialog(dialog, Color.DARK_BLUE)
 	play_sound(kid_sounds[random_number_generator.randi_range(0, kid_sounds.size() - 1)])

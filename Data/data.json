@@ -33,12 +33,36 @@
             "Text": "I would never throw away Forky, he’s one of my two best friends!"
         },
         {
+            "Id": "Fork1.Mom",
+            "Text": "Mom>I bet you’ll finish your meal in no time!"
+        },
+        {
             "Id": "Fork.Dog",
             "Text": "Solution>"
         },
         {
             "Id": "Fork.Window",
             "Text": "I shouldn’t do that"
+        },
+        {
+            "Id": "Fork1.Food2",
+            "Text": "Disgusting"
+        },
+        {
+            "Id": "Food2.Fork1",
+            "Text": "I don’t know what it is, but it isn’t food"
+        },
+        {
+            "Id": "Fork1.Trash",
+            "Text": "Trash looks hungry"
+        },
+        {
+            "Id": "Fork1.Dog",
+            "Text": "She'll be mad at me"
+        },
+        {
+            "Id": "Fork1.Window",
+            "Text": "I would never throw away Forky, he’s one of my two best friends!"
         },
         {
             "Id": "Food.Mom",
@@ -82,7 +106,7 @@
         },
         {
             "Id": "Food2.Window",
-            "Text": "Bobby looks skinny, he should eat something"
+            "Text": "I can’t get to the window with mom on the way"
         },
         {
             "Id": "Food3.Dog",

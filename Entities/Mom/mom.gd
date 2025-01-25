@@ -46,3 +46,7 @@ func move_to(node: Node2D):
     else:
         skeleton2d.scale.x = -absScaleX
     MomStateMachine.change_state(self, MomStateMachine.MomStateEnum.WALK)
+    
+func wash():
+    get_node("/root/Game/FakeFork").hide()
+    MomStateMachine.change_state(self, MomStateMachine.MomStateEnum.WASH)
