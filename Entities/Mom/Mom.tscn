@@ -960,7 +960,6 @@ texture = ExtResource("10_l4epi")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmLeft/HandLeft"]
 position = Vector2(101, 142)
-scale = Vector2(1, 1)
 texture = ExtResource("11_yv6li")
 
 [node name="ArmRight" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
