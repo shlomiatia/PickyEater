@@ -616,3 +616,5 @@ bone_angle = 0.0
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/Head"]
 position = Vector2(-13, 123)
 texture = ExtResource("14_wspbs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
