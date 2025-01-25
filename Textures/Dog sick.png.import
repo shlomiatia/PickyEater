@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oqr33thopkso"
-path="res://.godot/imported/Dog sick .png-d73ec43cb90635124e1b2fc68edd6c24.ctex"
+uid="uid://wadr6xkwxo7v"
+path="res://.godot/imported/Dog sick.png-178442aa8ab42de6ea691ad6818a9268.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Dog sick .png"
-dest_files=["res://.godot/imported/Dog sick .png-d73ec43cb90635124e1b2fc68edd6c24.ctex"]
+source_file="res://Textures/Dog sick.png"
+dest_files=["res://.godot/imported/Dog sick.png-178442aa8ab42de6ea691ad6818a9268.ctex"]
 
 [params]
 

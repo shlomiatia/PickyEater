@@ -17,13 +17,14 @@ func _process(player: Kid, delta: float) -> void:
             player.mom.move_to(player.get_node("/root/Game/Food1"))
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.WALK)
             player.move_to(player.get_node("/root/Game/Side").global_position)
-            
         elif player.item.name == "Food2" && player.scenery == null:
             player.item.empty()
             player.animation_player.play("throw")
             player.mom.show()
             player.show_mom_dialog("Done so soon? I’ll bring you a lovely third then")
             player.mom.move_to(player.get_node("/root/Game/Food2"))
+            KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.WALK)
+            player.move_to(player.get_node("/root/Game/Side").global_position)
         elif player.item.name == "Fork" && player.scenery.name == "Dog":
             player.item.hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
