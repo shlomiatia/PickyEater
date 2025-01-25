@@ -22,7 +22,6 @@ KidStateMachine="*res://Entities/Kid/StateMachine/kid_state_machine.gd"
 DataProvider="*res://Scripts/data_provider.gd"
 MomStateMachine="*res://Entities/Mom/StateMachine/mom_state_machine.gd"
 AudioPlayer="*res://Entities/AudioPlayer/AudioPlayer.tscn"
-DialogsManager="*res://Scripts/dialogsManager.gd"
 
 [display]
 

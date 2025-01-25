@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://vdc0qiq7rqkv"]
+[gd_scene load_steps=29 format=3 uid="uid://vdc0qiq7rqkv"]
 
 [ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_jp0tb"]
 [ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="1_u5rtl"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://u0ot6cul0bje" path="res://Textures/Food/Bird 1.png" id="16_sf2tf"]
 [ext_resource type="Texture2D" uid="uid://7whi4arofs8i" path="res://Textures/Food/Bird 3.png" id="17_ey48n"]
 [ext_resource type="AudioStream" uid="uid://4plgvv3ewt8s" path="res://Sounds/bird.mp3" id="20_1gqi7"]
+[ext_resource type="PackedScene" uid="uid://bp6juu24l6k1s" path="res://Entities/DialogPopup/DialogPopup.tscn" id="21_djntr"]
+[ext_resource type="AudioStream" uid="uid://cgvqpngtk15yf" path="res://Sounds/laugh.mp3" id="21_h6q5l"]
+[ext_resource type="PackedScene" uid="uid://d2i48w56j4wjq" path="res://Entities/PowFood/PowFood.tscn" id="22_b4y1w"]
 
 [sub_resource type="Theme" id="Theme_jayqm"]
 default_font = ExtResource("14_q8fnc")
@@ -31,7 +34,7 @@ default_font_size = 48
 
 [sub_resource type="Animation" id="Animation_yewhx"]
 resource_name = "Fly"
-length = 3.0
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -75,11 +78,14 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2.5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(2.5, 5.5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"eat"
+}, {
+"args": [],
+"method": &"show_outro"
 }]
 }
 tracks/4/type = "audio"
@@ -93,8 +99,12 @@ tracks/4/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("20_1gqi7")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("21_h6q5l")
 }],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0, 3)
 }
 tracks/4/use_blend = true
 
@@ -292,6 +302,12 @@ libraries = {
 
 [node name="Side" type="Node2D" parent="."]
 position = Vector2(214, 934)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PowFood" parent="CanvasLayer2" instance=ExtResource("22_b4y1w")]
+
+[node name="DialogPopup" parent="CanvasLayer2" instance=ExtResource("21_djntr")]
 
 [editable path="Window"]
 [editable path="Trash"]
