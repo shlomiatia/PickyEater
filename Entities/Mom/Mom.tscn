@@ -911,12 +911,14 @@ length = 16.0
 bone_angle = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight/PalmRight"]
+z_index = 1
 position = Vector2(-117.381, 61.8452)
 rotation = 0.93501
 texture = ExtResource("13_p6rou")
 flip_h = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Chest/ArmRight/HandRight"]
+z_index = 1
 position = Vector2(-54, 145)
 texture = ExtResource("14_p3dod")
 
