@@ -53,12 +53,20 @@
             "Text": "Mom>If you’ll be a good boy and finish all your food, I will gladly join you for desert"
         },
         {
+            "Id": "Food1.Trash",
+            "Text": "Solution>"
+        },
+        {
             "Id": "Food1.Window",
             "Text": "I can’t get to the window with mom on the way"
         },
         {
+            "Id": "Food1.Dog",
+            "Text": "You’re a proud Chinese breed!"
+        },
+        {
             "Id": "Food2.Dog",
-            "Text": ">Solution"
+            "Text": "Solution>"
         },
         {
             "Id": "Food2.Trash",
@@ -67,6 +75,30 @@
         {
             "Id": "Food2.Window",
             "Text": "Bobby looks skinny, he should eat something"
+        },
+        {
+            "Id": "Food3.Dog",
+            "Text": "He's already sick"
+        },
+        {
+            "Id": "Food3.Trash",
+            "Text": "This is where all monsters end up"
+        },
+        {
+            "Id": "Food3.Window",
+            "Text": "Solution>"
+        },
+        {
+            "Id": "Worm.Dog",
+            "Text": "Mmmm… no"
+        },
+        {
+            "Id": "Worm.Trash",
+            "Text": "Hey Trash! It’s 'eat all you can' day. Get it? 'Can'..."
+        },
+        {
+            "Id": "Worm.Window",
+            "Text": "Solution>"
         },
         ]
 }

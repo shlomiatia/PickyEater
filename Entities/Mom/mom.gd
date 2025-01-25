@@ -1,7 +1,7 @@
 class_name Mom extends Node2D
 
 const scale_base: float = 0.5
-const legs_offset: float = 150.0
+const legs_offset: float = 250.0
 
 var label: String = "Mom"
 
