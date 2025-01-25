@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://vdc0qiq7rqkv"]
+[gd_scene load_steps=29 format=3 uid="uid://vdc0qiq7rqkv"]
 
 [ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_jp0tb"]
 [ext_resource type="PackedScene" uid="uid://dujrwkr24dw6q" path="res://Entities/Kid/Kid.tscn" id="1_u5rtl"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://4plgvv3ewt8s" path="res://Sounds/bird.mp3" id="20_1gqi7"]
 [ext_resource type="PackedScene" uid="uid://bp6juu24l6k1s" path="res://Entities/DialogPopup/DialogPopup.tscn" id="21_djntr"]
 [ext_resource type="AudioStream" uid="uid://cgvqpngtk15yf" path="res://Sounds/laugh.mp3" id="21_h6q5l"]
+[ext_resource type="PackedScene" uid="uid://d2i48w56j4wjq" path="res://Entities/PowFood/PowFood.tscn" id="22_b4y1w"]
 
 [sub_resource type="Theme" id="Theme_jayqm"]
 default_font = ExtResource("14_q8fnc")
@@ -303,6 +304,8 @@ libraries = {
 position = Vector2(214, 934)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PowFood" parent="CanvasLayer2" instance=ExtResource("22_b4y1w")]
 
 [node name="DialogPopup" parent="CanvasLayer2" instance=ExtResource("21_djntr")]
 
