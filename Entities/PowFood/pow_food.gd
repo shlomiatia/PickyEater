@@ -26,7 +26,7 @@ func _pow_food(foodNo: int) -> void:
 	label.text = TEXTS[foodNo]
 	var sound = load("res://Sounds/LEVEL " + str(foodNo+1) + ".mp3")
 	_play_sound(sound)
-	await get_tree().create_timer(11.98).timeout
+	await get_tree().create_timer(7).timeout
 	self.visible = false
 	get_node("/root/AudioPlayer/AudioStreamPlayer").set_stream_paused(false)
 	
