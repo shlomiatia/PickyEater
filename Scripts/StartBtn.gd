@@ -39,12 +39,8 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-    #var current_scene = self.get_tree().current_scene
-    #self.get_tree().root.add_child(new_scene)
-    #self.get_tree().current_scene = new_scene
-    #current_scene.queue_free()
-    
     dialog_popup._start_dialog(INTRO_SPEAKERS, INTRO)
+    mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
 
 func _broccoli() -> void:
     pow_food._pow_food(0)

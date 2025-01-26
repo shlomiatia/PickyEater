@@ -33,12 +33,10 @@ var dialog: Array[String] = []
 var speakers: Array[String] = []
 var can_click: bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
     pass
 
@@ -76,9 +74,9 @@ func _start_dialog(dialog_speakers: Array[String], dialog_content: Array[String]
         dog_dialog.visible = true
         dog_label.text = dialog[0]
         _play_sound(DOG_SOUND)
-    #show text 
 
 func _on_button_pressed() -> void:
+    prints("_on_button_pressed", can_click)
     if can_click:
         _next_dialog()
 
@@ -107,11 +105,9 @@ func _play_sound_wait(CorrectSound: AudioStreamMP3) -> void:
         _next_dialog()
 
 func _play_sound(CorrectSound: AudioStreamMP3) -> void:
-    #get_node("/root/AudioPlayer/AudioStreamPlayer").set_stream_paused(true)
     if !$AudioStreamPlayer2D.is_playing():
         $AudioStreamPlayer2D.stream = CorrectSound
         $AudioStreamPlayer2D.play()
-        #get_node("/root/AudioPlayer/AudioStreamPlayer").set_stream_paused(false)
     
 func _broccoli() -> void:
     await pow_food._pow_food(0)

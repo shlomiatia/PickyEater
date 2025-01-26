@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhp3d1ec1dppe"]
+[gd_scene load_steps=21 format=3 uid="uid://bhp3d1ec1dppe"]
 
 [ext_resource type="PackedScene" uid="uid://bp6juu24l6k1s" path="res://Entities/DialogPopup/DialogPopup.tscn" id="1_abdxt"]
 [ext_resource type="Texture2D" uid="uid://bt1ic825jmcr3" path="res://Textures/Background.png" id="1_s7snu"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://d2i48w56j4wjq" path="res://Entities/PowFood/PowFood.tscn" id="13_kq84r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4px35"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp1sg"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg7yo"]
@@ -86,9 +89,11 @@ theme_override_colors/font_hover_color = Color(0.235573, 0.028064, 0.0186281, 1)
 theme_override_colors/font_pressed_color = Color(0.847059, 0.219608, 0.176471, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_xx8c0")
 theme_override_font_sizes/font_size = 124
 theme_override_styles/focus = SubResource("StyleBoxFlat_4px35")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rp1sg")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_cg7yo")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_uhirl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kqbny")
