@@ -42,7 +42,7 @@
         },
         {
             "Id": "Fork.Window",
-            "Text": "i would never throw away forky"
+            "Text": "I would never throw away forky"
         },
         {
             "Id": "Fork1.Food2",
@@ -134,11 +134,11 @@
         },
         {
             "Id": "Worm.Dog",
-            "Text": "he already has worms"
+            "Text": "He already has worms"
         },
         {
             "Id": "Worm.Food3",
-            "Text": "they have already left the nest"
+            "Text": "They have already left the nest"
         },
         {
             "Id": "Food3.Worm",

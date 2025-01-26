@@ -38,6 +38,10 @@ func _process(delta: float) -> void:
         scaleSizeX = -scaleSizeY
     skeleton2d.scale = Vector2(scaleSizeX, scaleSizeY)
 
+func move_to_in(node: Node2D):
+    await get_tree().create_timer(8).timeout
+    move_to(node)
+
 func move_to(node: Node2D):
     target_node = node
     var absScaleX = absf(skeleton2d.scale.x)

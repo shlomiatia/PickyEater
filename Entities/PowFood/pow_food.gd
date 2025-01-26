@@ -29,6 +29,13 @@ func _pow_food(foodNo: int) -> void:
     await get_tree().create_timer(7).timeout
     self.visible = false
     get_node("/root/AudioPlayer/AudioStreamPlayer").set_stream_paused(false)
+    var mom = get_node_or_null("/root/Game/Mom")
+    if mom != null:
+        if foodNo == 1:
+            mom.move_to(mom.get_node("/root/Game/Sink"))
+        else:
+            mom.move_to(mom.get_node("/root/Game/Exit"))
+
     
 
 func _play_sound(CorrectSound: AudioStreamMP3) -> void:
