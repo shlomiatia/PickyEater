@@ -27,7 +27,7 @@ func _process(player: Kid, delta: float) -> void:
         elif player.item.name == "Fork" && player.scenery.name == "Dog":
             player.item.hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)
-            player.play_sound(player.pickup_sound)
+            player.show_dialog("Fetch Bobby")
         elif player.item.name == "Food1" && player.scenery.name == "Trash":
             player.item.hide()
             KidStateMachine.change_state(player, KidStateMachine.KidStateEnum.GO_TO_SCENERY)

@@ -9,11 +9,11 @@ func enter(mom: Mom):
 func _process(mom: Mom, delta: float) -> void:
     mom.global_position = mom.global_position.move_toward(mom.target_node.global_position, delta * speed)
     if mom.global_position == mom.target_node.global_position:
-        if mom.target_node.name == "Sink":
-            if mom.get_node("/root/Game/FakeFork").visible:
-                MomStateMachine.change_state(mom, MomStateMachine.MomStateEnum.DUCK)
-            else:
-                MomStateMachine.change_state(mom, MomStateMachine.MomStateEnum.WASH)
+        if mom.target_node.name == "FakeFork":
+            MomStateMachine.change_state(mom, MomStateMachine.MomStateEnum.DUCK)
+            mom.target_node = null
+        elif mom.target_node.name == "Sink":
+            MomStateMachine.change_state(mom, MomStateMachine.MomStateEnum.WASH)
             mom.target_node = null
         elif mom.target_node.name == "Food1":
             var food = mom.get_node("/root/Game/Food1")

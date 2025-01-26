@@ -76,7 +76,6 @@ func _start_dialog(dialog_speakers: Array[String], dialog_content: Array[String]
         _play_sound(DOG_SOUND)
 
 func _on_button_pressed() -> void:
-    prints("_on_button_pressed", can_click)
     if can_click:
         _next_dialog()
 

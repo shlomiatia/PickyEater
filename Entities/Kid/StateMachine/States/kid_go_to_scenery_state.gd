@@ -15,9 +15,10 @@ func _process(player: Kid, delta: float) -> void:
         if player.item.name == "Fork" && player.scenery.name == "Dog":
             player.animation_player.play("throw")
             player.show_mom_dialog("Oh dear look at what you’ve done now. Now I have to wash it")
-            player.mom.move_to(player.get_node("/root/Game/Sink"))
+            var fake_fort = player.get_node("/root/Game/FakeFork")
+            player.mom.move_to(fake_fort)
             player.get_node("/root/Game/Food").name = "Food1"
-            player.get_node("/root/Game/FakeFork").show()
+            fake_fort.show()
             player.scenery = null
         elif player.scenery.name == "Trash":
             player.animation_player.play("throw")

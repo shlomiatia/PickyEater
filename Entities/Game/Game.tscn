@@ -208,16 +208,19 @@ position = Vector2(954, 987)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_nk60b")
 
+[node name="FakeFork" type="Node2D" parent="."]
+visible = false
+position = Vector2(1370, 670)
+
+[node name="Sprite2D" type="Sprite2D" parent="FakeFork"]
+position = Vector2(48, 385)
+rotation = 0.680678
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_a186j")
+
 [node name="Food" parent="." instance=ExtResource("8_vp4nc")]
 position = Vector2(822, 850)
 scale = Vector2(0.25, 0.25)
-
-[node name="FakeFork" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1670, 1028)
-rotation = 0.598648
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_a186j")
 
 [node name="Fork" parent="." instance=ExtResource("4_resh7")]
 position = Vector2(802, 890)
@@ -244,7 +247,7 @@ texture = ExtResource("12_o35or")
 polygon = PackedVector2Array(-40, 13, -33, 4, 42, 11, 36, 31)
 
 [node name="Dog" parent="." instance=ExtResource("6_1kefv")]
-position = Vector2(1779, 992)
+position = Vector2(1539, 997)
 label = "Bobby"
 
 [node name="Sprite2D" parent="Dog" index="0"]
@@ -306,6 +309,7 @@ position = Vector2(214, 934)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="PowFood" parent="CanvasLayer2" instance=ExtResource("22_b4y1w")]
+visible = false
 
 [node name="DialogPopup" parent="CanvasLayer2" instance=ExtResource("21_djntr")]
 

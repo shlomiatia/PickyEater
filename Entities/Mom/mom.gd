@@ -49,4 +49,4 @@ func move_to(node: Node2D):
     
 func wash():
     get_node("/root/Game/FakeFork").hide()
-    MomStateMachine.change_state(self, MomStateMachine.MomStateEnum.WASH)
+    move_to(get_node("/root/Game/Sink"))
